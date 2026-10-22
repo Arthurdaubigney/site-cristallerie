@@ -1,4 +1,4 @@
-import { SITE, icon } from './layout.mjs';
+import { SITE, icon, photo } from './layout.mjs';
 
 const R = (i = 0) => `data-reveal style="--i:${i}"`;
 const cta = (rel, label = 'Estimer ma cristallerie') =>
@@ -32,7 +32,7 @@ export const pages = {
   // ----------------------------------------------------------------- ACCUEIL
   '': {
     title: 'Rachat & estimation de cristallerie ancienne | Baccarat, Lalique, Daum',
-    description: "Estimation gratuite et rachat cash de cristallerie ancienne : vases en cristal, carafes, verres Baccarat, Saint-Louis, Lalique, Daum, Gallé. Réponse sous 48 h, paiement immédiat.",
+    description: "Estimation gratuite et rachat cash de cristallerie ancienne : vases en cristal, carafes, verres Baccarat, Saint-Louis, Lalique, Daum, Gallé. On vous répond rapidement, paiement à la remise.",
     schema: [
       {
         '@context': 'https://schema.org',
@@ -51,10 +51,10 @@ export const pages = {
     <div>
       <p class="badge" ${R()}>${icon.shield}Expertise indépendante · gratuite et sans engagement</p>
       <h1 ${R(1)}>Estimation et rachat de <span class="metal-text">cristallerie ancienne</span>, vases et verres signés</h1>
-      <p class="lead" ${R(2)}>Baccarat, Saint-Louis, Lalique, Daum, Gallé… Envoyez quelques photos : nous estimons vos pièces sous 48 heures et vous proposons un rachat au comptant, en toute discrétion.</p>
+      <p class="lead" ${R(2)}>Baccarat, Saint-Louis, Lalique, Daum, Gallé… Envoyez quelques photos : nous estimons vos pièces, nous vous répondons rapidement et nous vous proposons un rachat au comptant, en toute discrétion.</p>
       <div class="cta-row" ${R(3)}>${cta(rel)}<a class="btn btn--ghost" href="${rel}expertises/">Découvrir les pièces recherchées</a></div>
       <div class="hero-stats" ${R(4)}>
-        <div><strong>48 h</strong>pour votre estimation</div>
+        <div><strong>Rapide</strong>une réponse sans attendre</div>
         <div><strong>0 €</strong>de frais, sans engagement</div>
         <div><strong>7</strong>grandes manufactures expertisées</div>
       </div>
@@ -74,7 +74,7 @@ export const pages = {
     </div>
     <div class="trust">
       <article class="trust-item" ${R(0)}>${icon.shield}<h3>Confidentialité</h3><p>Votre identité et le contenu de votre collection restent strictement privés.</p></article>
-      <article class="trust-item" ${R(1)}>${icon.clock}<h3>Réponse sous 24 / 48 h</h3><p>Une estimation argumentée par un expert, rapidement et gratuitement.</p></article>
+      <article class="trust-item" ${R(1)}>${icon.clock}<h3>On répond rapidement</h3><p>Une estimation argumentée par un expert, gratuite et sans attente inutile.</p></article>
       <article class="trust-item" ${R(2)}>${icon.truck}<h3>Transport sécurisé</h3><p>Emballage professionnel et acheminement assuré, à notre charge.</p></article>
       <article class="trust-item" ${R(3)}>${icon.home}<h3>Déplacement à domicile</h3><p>Pour les collections importantes, nous venons chez vous.</p></article>
       <article class="trust-item" ${R(4)}>${icon.euro}<h3>Paiement immédiat</h3><p>Règlement comptant dès la remise de vos pièces.</p></article>
@@ -106,7 +106,7 @@ export const pages = {
     </div>
     <ol class="steps">
       <li class="step" ${R(0)}><h3>Envoyez photos &amp; signatures</h3><p>Remplissez le formulaire en ligne et joignez quelques clichés : vue d'ensemble, détails de taille, dessous du pied et signature.</p></li>
-      <li class="step" ${R(1)}><h3>Recevez une estimation gratuite</h3><p>Un expert identifie la manufacture, la période et l'état, puis vous répond sous 24 à 48 heures avec une valeur détaillée.</p></li>
+      <li class="step" ${R(1)}><h3>Recevez une estimation gratuite</h3><p>Un expert identifie la manufacture, la période et l'état, puis vous répond rapidement avec une valeur détaillée.</p></li>
       <li class="step" ${R(2)}><h3>Acceptez le rachat cash</h3><p>Si notre proposition vous convient, nous organisons le retrait ou le transport assuré et vous réglons immédiatement.</p></li>
     </ol>
     <div class="cta-row" style="margin-top:48px" ${R()}>${cta(rel, 'Demander une expertise gratuite')}</div>
@@ -121,18 +121,18 @@ export const pages = {
       <p class="lead">Carafes, vases, verres à pied, presse-papiers… voici le type de pièces qui retiennent toute notre attention.</p>
     </div>
     <div class="pieces">
-      <figure class="piece" ${R(0)}><img src="${rel}assets/img/carafe.svg" alt="Carafe en cristal taillé" loading="lazy" width="400" height="500"><figcaption><strong>Carafes &amp; bouchons</strong><span>Tailles diamant, bouchons facettés</span></figcaption></figure>
-      <figure class="piece" ${R(1)}><img src="${rel}assets/img/vase.svg" alt="Vase en cristal soufflé" loading="lazy" width="400" height="500"><figcaption><strong>Vases signés</strong><span>Soufflés, gravés, moulés-pressés</span></figcaption></figure>
-      <figure class="piece" ${R(2)}><img src="${rel}assets/img/verre.svg" alt="Verre à pied en cristal" loading="lazy" width="400" height="500"><figcaption><strong>Services de verres</strong><span>Séries complètes ou dépareillées</span></figcaption></figure>
-      <figure class="piece" ${R(3)}><img src="${rel}assets/img/presse-papier.svg" alt="Presse-papier en cristal à fleur incluse" loading="lazy" width="400" height="500"><figcaption><strong>Presse-papiers</strong><span>Sulfures, fleurs et millefiori</span></figcaption></figure>
+      <figure class="piece" ${R(0)}>${photo(rel, 'decanter-baccarat')}<figcaption><strong>Carafes &amp; bouchons</strong><span>Tailles diamant, bouchons facettés</span></figcaption></figure>
+      <figure class="piece" ${R(1)}>${photo(rel, 'vase-lalique-ceylan')}<figcaption><strong>Vases signés</strong><span>Lalique, Gallé, Daum, Schneider</span></figcaption></figure>
+      <figure class="piece" ${R(2)}>${photo(rel, 'verre-saint-louis')}<figcaption><strong>Services de verres</strong><span>Séries complètes ou dépareillées</span></figcaption></figure>
+      <figure class="piece" ${R(3)}>${photo(rel, 'presse-papier-baccarat', { w: 1000, h: 1000 })}<figcaption><strong>Presse-papiers</strong><span>Sulfures, fleurs et millefiori</span></figcaption></figure>
     </div>
-    <p class="note-sample" style="color:var(--paper-dim)">Illustrations. Vos photographies nous permettent d'évaluer chaque pièce réelle.</p>
+    <p class="note-sample" style="color:var(--paper-dim)">Exemples de pièces de musées et de collections. Envoyez-nous vos photos pour estimer les vôtres.</p>
 
     <h2 style="margin-top:clamp(64px,8vw,110px)" ${R()}>Ils nous ont confié leurs pièces</h2>
     <!-- TÉMOIGNAGES D'EXEMPLE : à remplacer par de vrais avis clients avant la mise en ligne -->
     <div class="quotes">
-      <blockquote class="quote" ${R(0)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Une réponse claire en deux jours, avec le détail de chaque pièce du service. Très rassurant. »</p><footer><strong>Marie-Hélène</strong> · succession, service de verres</footer></blockquote>
-      <blockquote class="quote" ${R(1)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Ils se sont déplacés pour mes vases. Emballage soigné et règlement le jour même. »</p><footer><strong>Jean-Paul</strong> · collectionneur</footer></blockquote>
+      <blockquote class="quote" ${R(0)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Une réponse claire et rapide, avec le détail de chaque pièce du service. Très rassurant. »</p><footer><strong>Marie-Hélène</strong> · succession, service de verres</footer></blockquote>
+      <blockquote class="quote" ${R(1)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Ils se sont déplacés pour mes vases. Emballage soigné et règlement à la remise. »</p><footer><strong>Jean-Paul</strong> · collectionneur</footer></blockquote>
       <blockquote class="quote" ${R(2)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Aucune pression, de vrais conseils pour identifier mes signatures. Je recommande. »</p><footer><strong>Sophie</strong> · particulier</footer></blockquote>
     </div>
   </div>
@@ -142,7 +142,7 @@ export const pages = {
   <div class="wrap">
     <div class="cta-band" ${R()}>
       <h2 id="cta-final">Un cristal de famille ? Découvrez sa vraie valeur</h2>
-      <p class="lead">Quelques photos suffisent. Estimation gratuite, réponse sous 48 h, aucune obligation de vendre.</p>
+      <p class="lead">Quelques photos suffisent. Estimation gratuite, réponse rapide, aucune obligation de vendre.</p>
       <div class="cta-row">${cta(rel)}<a class="btn btn--ghost" href="${rel}contact/">Poser une question</a></div>
     </div>
   </div>
@@ -171,6 +171,18 @@ export const pages = {
     <article class="cat" ${R(4)}>${icon.sculpt}<h3>Sculptures &amp; statuettes</h3><p>Animaux, nus, bustes et pièces décoratives en cristal ou verre moulé signés.</p></article>
     <article class="cat" ${R(5)}>${icon.gem}<h3>Presse-papiers &amp; objets de vitrine</h3><p>Sulfures, boules à fleurs, millefiori, cendriers, boîtes et coupes d'exception.</p></article>
   </div>
+</div></section>
+
+<section class="section" aria-labelledby="exemples" style="padding-block:clamp(60px,8vw,110px)"><div class="wrap">
+  <div class="section-head" ${R()}><h2 id="exemples">Quelques exemples de signatures et de styles</h2>
+  <p class="lead">Du verre gravé Art nouveau aux lustres monumentaux : le décor, la couleur et la technique orientent déjà l'identification.</p></div>
+  <div class="pieces">
+    <figure class="piece" ${R(0)}>${photo(rel, 'vase-galle-angraecum')}<figcaption><strong>Gallé</strong><span>Verre multicouche dégagé à l'acide</span></figcaption></figure>
+    <figure class="piece" ${R(1)}>${photo(rel, 'vase-daum-automne', { w: 1000, h: 1750 })}<figcaption><strong>Daum Nancy</strong><span>Verre gravé et émaillé</span></figcaption></figure>
+    <figure class="piece" ${R(2)}>${photo(rel, 'vase-schneider-garance', { w: 1000, h: 1950 })}<figcaption><strong>Schneider</strong><span>Verre poudré Art déco</span></figcaption></figure>
+    <figure class="piece" ${R(3)}>${photo(rel, 'vase-lalique-ceylan')}<figcaption><strong>Lalique</strong><span>Verre moulé-pressé</span></figcaption></figure>
+  </div>
+  <figure class="band" ${R()}>${photo(rel, 'lustre-baccarat', { w: 1000, h: 753 })}<figcaption>Lustre Baccarat à pampilles : les luminaires en cristal font aussi partie des pièces que nous estimons.</figcaption></figure>
 </div></section>
 
 <section class="section section--light" aria-labelledby="manufactures-detail"><div class="wrap">
@@ -210,7 +222,7 @@ export const pages = {
   // --------------------------------------------------------------- ESTIMATION
   estimation: {
     title: 'Estimation gratuite de cristallerie ancienne et rachat cash',
-    description: "Obtenez une estimation gratuite de vos cristaux, vases et verres anciens sous 48 h. Envoyez vos photos via le formulaire sécurisé : rachat au comptant, sans engagement.",
+    description: "Obtenez une estimation gratuite de vos cristaux, vases et verres anciens. Envoyez vos photos via le formulaire sécurisé : rachat au comptant, sans engagement.",
     crumbs: [['Rachat & estimation', 'estimation']],
     schema: [
       {
@@ -231,7 +243,7 @@ export const pages = {
 <section class="page-hero"><div class="wrap">
   <p class="crumbs"><a href="${rel}">Accueil</a> / Rachat &amp; estimation</p>
   <h1 ${R()}>Estimation gratuite de votre cristallerie et proposition de rachat</h1>
-  <p class="lead" ${R(1)}>Décrivez vos pièces, joignez vos photos : un expert vous répond sous 24 à 48 heures. Aucun engagement, aucun frais.</p>
+  <p class="lead" ${R(1)}>Décrivez vos pièces, joignez vos photos : un expert vous répond rapidement. Aucun engagement, aucun frais.</p>
 </div></section>
 
 <section class="section" style="padding-top:clamp(40px,6vw,70px)" aria-labelledby="form-title"><div class="wrap split" style="align-items:start">
@@ -240,7 +252,7 @@ export const pages = {
     <ul class="checks" ${R(1)}>
       <li>${icon.check}<span><strong>Vous envoyez vos photos</strong> via le formulaire : ensemble, détails, dessous du pied, signature.</span></li>
       <li>${icon.check}<span><strong>Nous identifions vos pièces</strong> : manufacture, période, technique, état de conservation.</span></li>
-      <li>${icon.check}<span><strong>Vous recevez une estimation</strong> détaillée et une proposition de rachat sous 24 à 48 h.</span></li>
+      <li>${icon.check}<span><strong>Vous recevez une estimation</strong> détaillée et une proposition de rachat, on vous répond rapidement.</span></li>
       <li>${icon.check}<span><strong>Vous décidez librement.</strong> Si vous acceptez, retrait à domicile ou transport assuré, puis paiement immédiat.</span></li>
     </ul>
     <div class="panel" style="margin-top:36px" ${R(2)}>
@@ -259,7 +271,7 @@ export const pages = {
   <div class="section-head" ${R()}><h2 id="rassurance">Pourquoi nous confier vos pièces</h2></div>
   <div class="trust">
     <article class="trust-item" ${R(0)}>${icon.shield}<h3>Confidentialité</h3><p>Aucune donnée partagée avec des tiers.</p></article>
-    <article class="trust-item" ${R(1)}>${icon.clock}<h3>Rapidité</h3><p>Réponse sous 24 à 48 heures.</p></article>
+    <article class="trust-item" ${R(1)}>${icon.clock}<h3>Rapidité</h3><p>On vous répond rapidement.</p></article>
     <article class="trust-item" ${R(2)}>${icon.truck}<h3>Transport assuré</h3><p>Emballage professionnel inclus.</p></article>
     <article class="trust-item" ${R(3)}>${icon.home}<h3>À domicile</h3><p>Déplacement pour les grandes collections.</p></article>
     <article class="trust-item" ${R(4)}>${icon.euro}<h3>Paiement cash</h3><p>Règlement à la remise des pièces.</p></article>
@@ -341,7 +353,7 @@ export const pages = {
       <li>${icon.phone}<span><strong>Téléphone</strong><a href="tel:${SITE.phoneHref}">${SITE.phone}</a></span></li>
       <li>${icon.mail}<span><strong>E-mail</strong><a href="mailto:${SITE.email}">${SITE.email}</a></span></li>
       <li>${icon.pin}<span><strong>Zones de déplacement</strong>${SITE.zone}. Déplacement à domicile pour les collections importantes, sur rendez-vous.</span></li>
-      <li>${icon.clock}<span><strong>Délai de réponse</strong>Sous 24 à 48 heures ouvrées.</span></li>
+      <li>${icon.clock}<span><strong>Réactivité</strong>On répond rapidement à chaque demande.</span></li>
     </ul>
   </div>
   <div class="panel" ${R(1)}>
@@ -360,6 +372,25 @@ export const pages = {
       )
       .join('')}
   </div>
+</div></section>`,
+  },
+  // ------------------------------------------------------------------- MERCI
+  merci: {
+    noindex: true,
+    title: 'Merci pour votre demande d\'estimation',
+    description: 'Votre demande d\'estimation de cristallerie a bien été envoyée.',
+    crumbs: [],
+    body: (rel) => `
+<section class="page-hero" style="min-height:70vh;display:grid;align-items:center"><div class="wrap">
+  <p class="badge" ${R()}>${icon.check}Demande bien reçue</p>
+  <h1 ${R(1)}>Merci, votre demande d'estimation est envoyée</h1>
+  <p class="lead" ${R(2)}>Un expert étudie vos photos et vous répond rapidement par e-mail. Pensez à regarder vos courriers indésirables si vous ne voyez rien arriver.</p>
+  <ul class="checks" style="margin:28px 0 40px;max-width:640px" ${R(3)}>
+    <li>${icon.check}<span>Vous n'avez rien à payer et aucune obligation de vendre.</span></li>
+    <li>${icon.check}<span>Vous pouvez compléter votre demande en répondant à notre e-mail avec d'autres photos.</span></li>
+    <li>${icon.check}<span>Vos informations restent strictement confidentielles.</span></li>
+  </ul>
+  <div class="cta-row" ${R(4)}><a class="btn" href="${rel}expertises/">Découvrir nos expertises${icon.arrow}</a><a class="btn btn--ghost" href="${rel}">Retour à l'accueil</a></div>
 </div></section>`,
   },
 };

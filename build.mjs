@@ -9,7 +9,7 @@ for (const [slug, p] of Object.entries(pages)) {
   const dir = slug ? `./${slug}` : '.';
   if (slug) mkdirSync(dir, { recursive: true });
   writeFileSync(`${dir}/index.html`, html);
-  urls.push(`${SITE.url}/${slug ? slug + '/' : ''}`);
+  if (!p.noindex) urls.push(`${SITE.url}/${slug ? slug + '/' : ''}`);
 }
 
 const today = new Date().toISOString().slice(0, 10);
@@ -26,7 +26,8 @@ const notFound = render({
   slug: '',
   title: 'Page introuvable | ' + SITE.name,
   description: 'Cette page est introuvable.',
+  noindex: true,
   body: () => `<section class="page-hero"><div class="wrap"><h1>Page introuvable</h1><p class="lead">Retournez à <a href="/">l'accueil</a> ou demandez une <a href="/estimation/">estimation gratuite</a>.</p></div></section>`,
-}).replace('index, follow, max-image-preview:large', 'noindex');
+});
 writeFileSync('./404.html', notFound);
 console.log('OK :', urls.length, 'pages');

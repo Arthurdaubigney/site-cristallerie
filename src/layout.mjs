@@ -1,3 +1,5 @@
+import { photos } from './photos.mjs';
+
 // Gabarit commun : configuration, <head> SEO, en-tête, pied de page, icônes.
 export const SITE = {
   name: 'Maison Éclat',
@@ -41,16 +43,34 @@ const NAV = [
   ['expertises', 'Expertises'],
   ['estimation', 'Rachat & estimation'],
   ['a-propos', 'À propos'],
-  ['contact', 'Contact & FAQ'],
 ];
+const FOOT_NAV = [...NAV, ['contact', 'Contact & FAQ']];
+
+const used = new Set();
+export function photo(rel, name, { lazy = true, w = 1000, h = 1250, cls = '' } = {}) {
+  used.add(name);
+  const p = photos[name];
+  return `<img${cls ? ` class="${cls}"` : ''} src="${rel}assets/photos/${name}.jpg" width="${w}" height="${h}" alt="${esc(p.alt)}"${lazy ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`;
+}
+const creditsHtml = () =>
+  used.size
+    ? `<details class="credits"><summary>Crédits photos</summary><ul>${[...used]
+        .map((n) => {
+          const p = photos[n];
+          return `<li>« <a href="${p.page}" rel="noopener" target="_blank">${esc(p.title)}</a> », ${esc(p.by)}, via Wikimedia Commons.</li>`;
+        })
+        .join('')}</ul></details>`
+    : '';
 
 export function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
-export function render({ slug, title, description, body, schema = [], crumbs = [], ogImage = 'assets/img/carafe.svg' }) {
+export function render({ slug, title, description, body, schema = [], crumbs = [], ogImage = 'assets/img/carafe.svg', noindex = false }) {
+  used.clear();
   const rel = slug ? '../' : '';
   const canonical = `${SITE.url}/${slug ? slug + '/' : ''}`;
+  const content = body(rel);
   const nav = NAV.map(
     ([s, label]) => `<a href="${rel}${s}/"${s === slug ? ' aria-current="page"' : ''}>${label}</a>`,
   ).join('');
@@ -83,7 +103,7 @@ export function render({ slug, title, description, body, schema = [], crumbs = [
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="${noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'}">
 <meta name="theme-color" content="#0B0F17">
 <link rel="canonical" href="${canonical}">
 <link rel="icon" href="${rel}assets/img/favicon.svg" type="image/svg+xml">
@@ -112,7 +132,7 @@ export function render({ slug, title, description, body, schema = [], crumbs = [
   </div>
 </header>
 <main id="contenu">
-${body(rel)}
+${content}
 </main>
 <footer class="site-footer">
   <div class="wrap">
@@ -121,10 +141,11 @@ ${body(rel)}
         <a class="brand" href="${rel || './'}">${icon.logo}<span class="brand-name">${SITE.name}</span></a>
         <p style="margin-top:18px">Expertise indépendante et rachat de cristallerie ancienne, vases signés, verrerie d'art et services de verres de collection.</p>
       </div>
-      <div><h2>Explorer</h2><ul>${NAV.map(([s, l]) => `<li><a href="${rel}${s}/">${l}</a></li>`).join('')}</ul></div>
+      <div><h2>Explorer</h2><ul>${FOOT_NAV.map(([s, l]) => `<li><a href="${rel}${s}/">${l}</a></li>`).join('')}</ul></div>
       <div><h2>Manufactures</h2><ul><li>Baccarat · Saint-Louis</li><li>Lalique · Daum</li><li>Val Saint-Lambert</li><li>Gallé · Schneider</li></ul></div>
       <div><h2>Contact</h2><ul><li><a href="tel:${SITE.phoneHref}">${SITE.phone}</a></li><li><a href="mailto:${SITE.email}">${SITE.email}</a></li><li>${SITE.zone}</li></ul></div>
     </div>
+    ${creditsHtml()}
     <div class="foot-bottom"><span>© <span id="y">2026</span> ${SITE.name}. Tous droits réservés.</span><span>Estimation gratuite · Sans engagement · Discrétion assurée</span></div>
   </div>
 </footer>
