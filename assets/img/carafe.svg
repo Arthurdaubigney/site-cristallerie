@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" role="img" aria-labelledby="t"><title id="t">Carafe en cristal taillé à bouchon facetté</title>
+<defs><style>.sheen{animation:sh 6.5s cubic-bezier(.65,0,.35,1) infinite}@keyframes sh{0%,55%{transform:translateX(0) skewX(-18deg)}100%{transform:translateX(640px) skewX(-18deg)}}@media(prefers-reduced-motion:reduce){.sheen{animation:none}}</style>
+<linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#94A3B8" stop-opacity=".55"/><stop offset=".35" stop-color="#E2E8F0" stop-opacity=".18"/><stop offset=".7" stop-color="#3B82F6" stop-opacity=".16"/><stop offset="1" stop-color="#E2E8F0" stop-opacity=".5"/></linearGradient>
+<linearGradient id="s" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<clipPath id="c"><path d="M178 100H222L226 190C226 225 300 250 300 340C300 440 292 500 282 522H118C108 500 100 440 100 340C100 250 174 225 174 190Z"/></clipPath>
+</defs>
+<g stroke="#E2E8F0" stroke-linejoin="round" fill="none">
+<polygon points="200,18 234,58 200,100 166,58" fill="url(#g)" stroke-width="1.5"/>
+<polyline points="166,58 234,58 M200,18 200,100" stroke-opacity=".55"/>
+<path d="M178 100H222L226 190C226 225 300 250 300 340C300 440 292 500 282 522H118C108 500 100 440 100 340C100 250 174 225 174 190Z" fill="url(#g)" stroke-width="1.5"/>
+<g clip-path="url(#c)" stroke-opacity=".5" stroke-width="1">
+<path d="M140 250V522M170 230V522M200 220V522M230 230V522M260 250V522"/>
+<path d="M100 340L200 280L300 340M100 400L200 340L300 400M100 460L200 400L300 460M100 520L200 460L300 520"/>
+<path d="M100 340L200 400L300 340M100 400L200 460L300 400M100 460L200 520L300 460"/>
+</g>
+<ellipse cx="200" cy="130" rx="25" ry="4" stroke-opacity=".7"/><ellipse cx="200" cy="162" rx="26" ry="4" stroke-opacity=".7"/>
+<ellipse cx="200" cy="522" rx="82" ry="8" fill="url(#g)" stroke-opacity=".8"/>
+</g>
+<g clip-path="url(#c)"><rect class="sheen" x="-120" y="180" width="70" height="360" fill="url(#s)" transform="skewX(-18)"/></g>
+</svg>

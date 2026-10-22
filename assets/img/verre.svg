@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" role="img" aria-labelledby="t"><title id="t">Verre à pied en cristal taillé</title>
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#94A3B8" stop-opacity=".55"/><stop offset=".45" stop-color="#E2E8F0" stop-opacity=".14"/><stop offset="1" stop-color="#3B82F6" stop-opacity=".3"/></linearGradient>
+<clipPath id="c"><path d="M120 60H280C284 160 270 250 200 290C130 250 116 160 120 60Z"/></clipPath></defs>
+<g stroke="#E2E8F0" stroke-linejoin="round" fill="none">
+<path d="M120 60H280C284 160 270 250 200 290C130 250 116 160 120 60Z" fill="url(#g)" stroke-width="1.5"/>
+<ellipse cx="200" cy="60" rx="80" ry="9" stroke-opacity=".9"/>
+<g clip-path="url(#c)" stroke-opacity=".45"><path d="M150 60V280M175 60V290M200 60V292M225 60V290M250 60V280M110 120L290 120M110 170L290 170M115 220L285 220"/></g>
+<path d="M192 290L190 480M208 290L210 480" stroke-width="1.5" fill="none"/>
+<path d="M194 330H206M193 390H207M192 440H208" stroke-opacity=".7"/>
+<path d="M120 500C120 480 280 480 280 500C280 520 120 520 120 500Z" fill="url(#g)" stroke-width="1.5"/>
+<ellipse cx="200" cy="498" rx="80" ry="10" stroke-opacity=".6"/>
+</g></svg>

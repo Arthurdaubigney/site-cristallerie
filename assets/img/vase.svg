@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" role="img" aria-labelledby="t"><title id="t">Vase en cristal soufflé au col évasé</title>
+<defs>
+<linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#94A3B8" stop-opacity=".55"/><stop offset=".4" stop-color="#E2E8F0" stop-opacity=".16"/><stop offset=".75" stop-color="#D97706" stop-opacity=".22"/><stop offset="1" stop-color="#E2E8F0" stop-opacity=".5"/></linearGradient>
+<clipPath id="c"><path d="M110 40C150 70 160 130 164 190C164 220 318 240 318 380C318 460 285 510 262 524H138C115 510 82 460 82 380C82 240 236 220 236 190C240 130 250 70 290 40Z"/></clipPath>
+</defs>
+<g stroke="#E2E8F0" stroke-linejoin="round" fill="none">
+<path d="M110 40C150 70 160 130 164 190C164 220 318 240 318 380C318 460 285 510 262 524H138C115 510 82 460 82 380C82 240 236 220 236 190C240 130 250 70 290 40Z" fill="url(#g)" stroke-width="1.5"/>
+<ellipse cx="200" cy="40" rx="90" ry="10" fill="url(#g)" stroke-opacity=".9"/>
+<g clip-path="url(#c)" stroke-opacity=".4"><path d="M120 300C170 330 230 330 280 300M100 360C160 400 240 400 300 360M96 420C160 470 240 470 304 420M110 480C170 520 230 520 290 480"/></g>
+<path d="M200 300C170 360 170 440 200 520M200 300C230 360 230 440 200 520" stroke-opacity=".35"/>
+<ellipse cx="200" cy="524" rx="64" ry="7" fill="url(#g)" stroke-opacity=".8"/>
+</g></svg>

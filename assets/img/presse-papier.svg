@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" role="img" aria-labelledby="t"><title id="t">Presse-papier en cristal à décor de fleur incluse</title>
+<defs><radialGradient id="g" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#E2E8F0" stop-opacity=".55"/><stop offset=".6" stop-color="#3B82F6" stop-opacity=".18"/><stop offset="1" stop-color="#94A3B8" stop-opacity=".45"/></radialGradient></defs>
+<g stroke="#E2E8F0" fill="none">
+<circle cx="200" cy="290" r="150" fill="url(#g)" stroke-width="1.5"/>
+<g stroke="#D97706" stroke-opacity=".85">
+<circle cx="200" cy="290" r="14" fill="#D97706" fill-opacity=".5"/>
+<g fill="#E2E8F0" fill-opacity=".14" stroke="#E2E8F0" stroke-opacity=".8">
+<ellipse cx="200" cy="236" rx="22" ry="38"/><ellipse cx="200" cy="344" rx="22" ry="38"/>
+<ellipse cx="146" cy="290" rx="38" ry="22"/><ellipse cx="254" cy="290" rx="38" ry="22"/>
+<ellipse cx="162" cy="252" rx="22" ry="38" transform="rotate(-45 162 252)"/><ellipse cx="238" cy="252" rx="22" ry="38" transform="rotate(45 238 252)"/>
+<ellipse cx="162" cy="328" rx="22" ry="38" transform="rotate(45 162 328)"/><ellipse cx="238" cy="328" rx="22" ry="38" transform="rotate(-45 238 328)"/>
+</g></g>
+<path d="M120 190C150 150 210 135 260 150" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="200" cy="448" rx="110" ry="12" stroke-opacity=".45"/>
+</g></svg>
