@@ -12,3 +12,7 @@ node build.mjs     # régénère index.html, expertises/, estimation/, a-propos/
 - `tallyId` : identifiant du formulaire Tally (tally.so/r/XXXXXX), affiché sur `/estimation/`
 - Témoignages (accueil) et texte « Notre histoire » (`src/pages.mjs`) : contenu d'exemple à remplacer
 - Repères historiques et marques des manufactures : à faire valider par l'expert
+
+## Déploiement (Vercel)
+Site statique : Vercel sert la racine du dépôt (`vercel.json`). La branche de production est `main` ; après un `node build.mjs`, commiter les pages générées.
+Formulaire d'estimation : Tally `7XqAM0` (identifiant dans `src/layout.mjs`), redirection vers `/merci/` à l'envoi.
