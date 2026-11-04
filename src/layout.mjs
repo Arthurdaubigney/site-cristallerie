@@ -5,8 +5,6 @@ export const SITE = {
   name: 'Maison Éclat',
   tagline: 'Expertise & rachat de cristallerie',
   url: 'https://www.maison-eclat.fr', // À REMPLACER par le vrai domaine
-  phone: '01 23 45 67 89', // À REMPLACER
-  phoneHref: '+33123456789', // À REMPLACER
   email: 'francoisseculapub@gmail.com',
   zone: 'Paris, Île-de-France et toute la France',
   tallyId: 'FORM_ID', // À REMPLACER par l'identifiant du formulaire Tally (tally.so/r/XXXXXX)
@@ -143,7 +141,7 @@ ${content}
       </div>
       <div><h2>Explorer</h2><ul>${FOOT_NAV.map(([s, l]) => `<li><a href="${rel}${s}/">${l}</a></li>`).join('')}</ul></div>
       <div><h2>Manufactures</h2><ul><li>Baccarat · Saint-Louis</li><li>Lalique · Daum</li><li>Val Saint-Lambert</li><li>Gallé · Schneider</li></ul></div>
-      <div><h2>Contact</h2><ul><li><a href="tel:${SITE.phoneHref}">${SITE.phone}</a></li><li><a href="mailto:${SITE.email}">${SITE.email}</a></li><li>${SITE.zone}</li></ul></div>
+      <div><h2>Contact</h2><ul><li><a href="mailto:${SITE.email}">${SITE.email}</a></li><li>${SITE.zone}</li></ul></div>
     </div>
     ${creditsHtml()}
     <div class="foot-bottom"><span>© <span id="y">2026</span> ${SITE.name}. Tous droits réservés.</span><span>Estimation gratuite · Sans engagement · <a href="${rel}mentions-legales/">Mentions légales</a></span></div>

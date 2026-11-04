@@ -207,6 +207,7 @@ export const pages = {
 <section class="section" aria-labelledby="signatures"><div class="wrap">
   <div class="section-head" ${R()}><h2 id="signatures">Conseils pour identifier estampilles et signatures</h2>
   <p class="lead">Quelques gestes simples avant de nous écrire. Surtout, ne nettoyez pas et ne frottez pas la marque.</p></div>
+  <figure class="band" style="margin:0 0 18px" ${R()}>${photo(rel, 'gravure-baccarat', { w: 1000, h: 874 })}<figcaption>Détail d'un cristal Baccarat gravé : l'inscription à l'acide se lit sous une lumière rasante.</figcaption></figure>
   <div class="tips">
     <article class="tip" ${R(0)}><h3>Observez sous une lumière rasante</h3><p>Une marque à l'acide apparaît comme un léger dépoli mat sur le cristal brillant. Inclinez la pièce face à une fenêtre ou une lampe.</p></article>
     <article class="tip" ${R(1)}><h3>Distinguez acide, sable et pointe</h3><p>La signature à l'acide est fine et régulière ; le sablage donne un grain plus rugueux ; la gravure à la pointe forme un trait irrégulier, parfois en cursive.</p></article>
@@ -263,6 +264,7 @@ export const pages = {
         <li>${icon.shield}<span>Signalez les éclats ou fêles, sans nettoyer ni réparer.</span></li>
       </ul>
     </div>
+    <figure class="fig" style="margin-top:28px" ${R(3)}>${photo(rel, 'service-verres-carafe', { w: 1000, h: 800 })}<figcaption>Un service de verres et sa carafe : photographiez l'ensemble, puis chaque pièce.</figcaption></figure>
   </div>
   <div class="form-shell" ${R(1)} id="formulaire">${form}</div>
 </div></section>
@@ -309,6 +311,15 @@ export const pages = {
   </ol>
 </div></section>
 
+<section class="section" aria-labelledby="savoir-faire" style="padding-block:clamp(56px,8vw,100px)"><div class="wrap">
+  <div class="section-head" ${R()}><h2 id="savoir-faire">Le cristal, de la fournaise à la vitrine</h2>
+  <p class="lead">Souffler, tailler, graver : connaître les gestes des verriers nous aide à lire une pièce et à reconnaître le travail bien fait.</p></div>
+  <div class="duo">
+    <figure class="fig" ${R(0)}>${photo(rel, 'souffleur-val-saint-lambert', { w: 719, h: 1000 })}<figcaption>Souffleur de verre au Val-Saint-Lambert, en Belgique.</figcaption></figure>
+    <figure class="fig" ${R(1)}>${photo(rel, 'verres-vitrine', { w: 1000, h: 750 })}<figcaption>Verres anciens en cristal taillé, certains teintés de vert.</figcaption></figure>
+  </div>
+</div></section>
+
 <section class="section section--light" aria-labelledby="charte"><div class="wrap">
   <div class="section-head" ${R()}><h2 id="charte">Notre charte de transparence</h2><p class="lead">Trois engagements simples, appliqués à chaque dossier.</p></div>
   <div class="values">
@@ -350,11 +361,11 @@ export const pages = {
   <div>
     <h2 id="coordonnees" ${R()}>Nous joindre</h2>
     <ul class="contact-list" ${R(1)}>
-      <li>${icon.phone}<span><strong>Téléphone</strong><a href="tel:${SITE.phoneHref}">${SITE.phone}</a></span></li>
       <li>${icon.mail}<span><strong>E-mail</strong><a href="mailto:${SITE.email}">${SITE.email}</a></span></li>
       <li>${icon.pin}<span><strong>Zones de déplacement</strong>${SITE.zone}. Déplacement à domicile pour les collections importantes, sur rendez-vous.</span></li>
       <li>${icon.clock}<span><strong>Réactivité</strong>On répond rapidement à chaque demande.</span></li>
     </ul>
+    <figure class="fig" style="margin-top:36px" ${R(2)}>${photo(rel, 'vase-daum-bleuets', { w: 1000, h: 1548 })}<figcaption>Vase aux bleuets, Daum frères, Nancy, 1898.</figcaption></figure>
   </div>
   <div class="panel" ${R(1)}>
     <h3>Le plus rapide : le formulaire d'estimation</h3>
