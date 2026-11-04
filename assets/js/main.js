@@ -58,7 +58,6 @@
   // Formulaire Tally : charge le script uniquement si un formulaire est configuré
   const tally = document.querySelector('iframe[data-tally-src]');
   if (tally) {
-    tally.src = tally.dataset.tallySrc;
     const s = document.createElement('script');
     s.src = 'https://tally.so/widgets/embed.js';
     s.async = true;
