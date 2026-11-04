@@ -393,4 +393,50 @@ export const pages = {
   <div class="cta-row" ${R(4)}><a class="btn" href="${rel}expertises/">Découvrir nos expertises${icon.arrow}</a><a class="btn btn--ghost" href="${rel}">Retour à l'accueil</a></div>
 </div></section>`,
   },
+  // --------------------------------------------------------- MENTIONS LÉGALES
+  'mentions-legales': {
+    title: 'Mentions légales et confidentialité',
+    description: `Mentions légales, hébergement, protection des données personnelles et crédits de ${SITE.name}.`,
+    crumbs: [['Mentions légales', 'mentions-legales']],
+    body: (rel) => `
+<section class="page-hero"><div class="wrap">
+  <p class="crumbs"><a href="${rel}">Accueil</a> / Mentions légales</p>
+  <h1 ${R()}>Mentions légales et confidentialité</h1>
+  <p class="lead" ${R(1)}>Informations légales relatives au site ${SITE.name} et à la protection de vos données personnelles.</p>
+</div></section>
+
+<section class="section section--light" style="padding-block:clamp(56px,8vw,100px)"><div class="wrap"><div class="prose">
+  <h2>Éditeur du site</h2>
+  <p>Le site <strong>${SITE.name}</strong> est édité par <strong>Monsieur François SECULA</strong>, entrepreneur individuel.</p>
+  <ul>
+    <li>Adresse : 21 rue du Docteur Tassin, 21200 Beaune</li>
+    <li>SIREN : 529 601 486 · SIRET (siège) : 529 601 486 00010</li>
+    <li>N° de TVA intracommunautaire : FR51 5296 0148 6</li>
+    <li>Activité (NAF/APE) : 4789Z, autres commerces de détail sur éventaires et marchés</li>
+    <li>E-mail : <a href="mailto:${SITE.email}">${SITE.email}</a></li>
+  </ul>
+  <p><strong>Directeur de la publication :</strong> François SECULA.</p>
+
+  <h2>Hébergement</h2>
+  <p>Le site est hébergé par <strong>Vercel Inc.</strong>, 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis — <a href="https://vercel.com" rel="noopener" target="_blank">vercel.com</a>.</p>
+
+  <h2>Propriété intellectuelle</h2>
+  <p>Les textes, la mise en page, les illustrations et le code de ce site sont la propriété de l'éditeur, sauf mention contraire. Toute reproduction sans autorisation est interdite. Les photographies sont issues de Wikimedia Commons sous licences libres (CC0, domaine public, CC BY, CC BY-SA) ; leurs auteurs et licences sont indiqués dans le bloc « Crédits photos » en bas des pages concernées.</p>
+
+  <h2>Données personnelles</h2>
+  <p><strong>Responsable du traitement :</strong> François SECULA, aux coordonnées indiquées ci-dessus.</p>
+  <p><strong>Données collectées :</strong> via le formulaire d'estimation, les informations que vous saisissez (nom, coordonnées, description de vos pièces) et les photographies que vous joignez.</p>
+  <p><strong>Finalités :</strong> étudier votre demande, vous répondre et, si vous l'acceptez, établir une proposition de rachat. Elles ne sont ni vendues ni cédées à des tiers à des fins commerciales.</p>
+  <p><strong>Base légale :</strong> l'exécution de mesures précontractuelles prises à votre demande et, pour la conservation de l'échange, l'intérêt légitime de l'éditeur.</p>
+  <p><strong>Durée de conservation :</strong> le temps nécessaire au traitement de votre demande, puis au maximum 3 ans à compter du dernier contact, sauf obligation légale de conservation plus longue en cas de transaction.</p>
+  <p><strong>Sous-traitants :</strong> le formulaire est fourni par <a href="https://tally.so" rel="noopener" target="_blank">Tally</a>, qui héberge les réponses pour le compte de l'éditeur. Le site est hébergé par Vercel (voir ci-dessus). Certains prestataires peuvent être situés hors de l'Union européenne ; les transferts sont alors encadrés par les mécanismes prévus par le RGPD.</p>
+  <p><strong>Vos droits :</strong> vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour les exercer, écrivez à <a href="mailto:${SITE.email}">${SITE.email}</a>. En cas de difficulté, vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr</a>).</p>
+
+  <h2>Cookies et polices</h2>
+  <p>Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience. Les polices de caractères (Cormorant Garamond et Inter) sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google pour leur diffusion.</p>
+
+  <h2>Responsabilité</h2>
+  <p>Les estimations sont données à titre indicatif d'après les photographies fournies et ne constituent une offre ferme qu'après examen de la pièce. L'éditeur s'efforce d'assurer l'exactitude des informations du site mais ne peut garantir leur exhaustivité.</p>
+</div></div></section>`,
+  },
 };
