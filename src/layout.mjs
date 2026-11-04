@@ -45,11 +45,17 @@ const NAV = [
 const FOOT_NAV = [...NAV, ['contact', 'Contact & FAQ']];
 
 const used = new Set();
-export function photo(rel, name, { lazy = true, w = 1000, h = 1250, cls = '' } = {}) {
-  used.add(name);
+const placed = new Map(); // garde-fou : une photo ne doit apparaître qu'une seule fois sur tout le site
+export function photo(rel, name, { lazy = true, cls = '' } = {}) {
   const p = photos[name];
-  return `<img${cls ? ` class="${cls}"` : ''} src="${rel}assets/photos/${name}.jpg" width="${w}" height="${h}" alt="${esc(p.alt)}"${lazy ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`;
+  if (!p) throw new Error(`Photo inconnue : ${name}`);
+  if (placed.has(name)) throw new Error(`Photo en double : « ${name} » (déjà utilisée sur « ${placed.get(name)} »)`);
+  placed.set(name, current);
+  used.add(name);
+  const st = `object-position:${p.pos}${p.fit ? `;object-fit:${p.fit}` : ''}${p.bg ? `;background:${p.bg}` : ''}`;
+  return `<img${cls ? ` class="${cls}"` : ''} src="${rel}assets/photos/${name}.jpg" width="${p.w}" height="${p.h}" alt="${esc(p.alt)}" style="${st}"${lazy ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`;
 }
+let current = '';
 const creditsHtml = () =>
   used.size
     ? `<details class="credits"><summary>Crédits photos</summary><ul>${[...used]
@@ -66,6 +72,7 @@ export function esc(s) {
 
 export function render({ slug, title, description, body, schema = [], crumbs = [], ogImage = 'assets/img/carafe.svg', noindex = false }) {
   used.clear();
+  current = slug || 'accueil';
   const rel = slug ? '../' : '';
   const canonical = `${SITE.url}/${slug ? slug + '/' : ''}`;
   const content = body(rel);

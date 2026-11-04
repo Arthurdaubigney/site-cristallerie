@@ -355,7 +355,7 @@ h3 { font-size: clamp(1.45rem, 2.2vw, 1.85rem); }
 
 /* Cartes manufactures avec photo */
 .house { padding: 0 0 26px; display: flex; flex-direction: column; }
-.house > :not(.house-img) { margin-inline: 24px; }
+.house > :not(.house-img):not(.hb-text) { margin-inline: 24px; }
 .house-img { width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: cover; object-position: center 25%; margin-bottom: 18px; transition: transform var(--duration-very-slow) var(--ease-smooth-out); }
 .house:hover .house-img { transform: scale(1.05); }
 .house { isolation: isolate; }
@@ -395,7 +395,12 @@ h3 { font-size: clamp(1.45rem, 2.2vw, 1.85rem); }
   .fullband::after { background: rgba(11, 15, 23, .78); }
 }
 @media (max-width: 600px) { .shots { grid-template-columns: 1fr; } }
-.house--wide .house-img { aspect-ratio: 32 / 11; }
-@media (max-width: 1100px) { .house--wide .house-img { aspect-ratio: 16 / 7; } }
+.house-img { aspect-ratio: 4 / 3; }
+.house--wide .house-img { aspect-ratio: 16 / 7; }
+.house--banner { grid-column: 1 / -1; flex-direction: row; align-items: stretch; padding: 0; }
+.house--banner .house-img { width: 38%; aspect-ratio: auto; margin: 0; min-height: 260px; }
+.house--banner .hb-text { margin: 0; padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; }
+@media (max-width: 1100px) { .house--banner { grid-column: 1 / -1; } }
+@media (max-width: 600px) { .house--banner { flex-direction: column; } .house--banner .house-img { width: 100%; aspect-ratio: 16 / 9; min-height: 0; } .house--banner .hb-text { padding: 20px 24px 26px; } }
 .hero h1 { font-size: clamp(2.5rem, 4.7vw, 4.2rem); }
 .hero { padding-block: clamp(40px, 5vw, 70px) clamp(60px, 7vw, 100px); }

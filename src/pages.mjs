@@ -1,20 +1,20 @@
 import { SITE, icon, photo } from './layout.mjs';
 
-const heroFig = (rel, name, w, h, cap) => `<figure class="hero-fig" data-reveal style="--i:2">${photo(rel, name, { w, h, lazy: false })}${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
+const heroFig = (rel, name, cap) => `<figure class="hero-fig" data-reveal style="--i:2">${photo(rel, name, { lazy: false })}${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
 
 const R = (i = 0) => `data-reveal style="--i:${i}"`;
 const cta = (rel, label = 'Estimer ma cristallerie') =>
   `<a class="btn" href="${rel}estimation/">${label}${icon.arrow}</a>`;
 
 // Fiches des grandes manufactures (repères historiques à valider par l'expert avant mise en ligne)
-const HOUSE_PHOTO = {"Baccarat": "lustre-baccarat", "Saint-Louis": "verre-saint-louis", "Lalique": "vase-lalique-ceylan", "Daum": "vase-daum-automne", "Val Saint-Lambert": "souffleur-val-saint-lambert", "Gallé": "vase-galle-angraecum", "Schneider": "vase-schneider-garance"};
+const HOUSE_PHOTO = {"Baccarat": "lustre-baccarat", "Saint-Louis": "verre-saint-louis", "Lalique": "vase-lalique-ceylan", "Daum": "vase-daum-automne", "Val Saint-Lambert": "vase-monumental-val-saint-lambert", "Gallé": "vase-galle-angraecum", "Schneider": "vase-schneider-garance"};
 const houses = [
   ['Baccarat', 'Fondée en 1764', "Le cristal des cours et des palais : services de verres, carafes, lustres et pièces monumentales. Marque gravée à l'acide.", 'wide accent'],
   ['Saint-Louis', 'Depuis 1586', 'Plus ancienne cristallerie de France : modèles Tommy, Thistle, Bubbles, boules presse-papier.', ''],
   ['Lalique', 'Depuis 1888', "René Lalique et ses héritiers : vases, statuettes et flacons en verre moulé-pressé, opalescent ou dépoli.", ''],
   ['Daum', 'Nancy, 1878', "Pâte de verre, verre gravé et cameo : vases Art nouveau et Art déco signés Daum Nancy.", ''],
   ['Val Saint-Lambert', 'Belgique, 1826', "Cristal taillé belge réputé : carafes, services et vases Art déco aux tailles profondes.", ''],
-  ['Gallé', 'Nancy, 1884', "Émile Gallé, maître de l'Art nouveau : vases multicouches dégagés à l'acide, signatures en réserve.", 'wide'],
+  ['Gallé', 'Nancy, 1884', "Émile Gallé, maître de l'Art nouveau : vases multicouches dégagés à l'acide, signatures en réserve.", ''],
   ['Schneider', 'Épinay-sur-Seine, 1913', "Verreries Art déco aux couleurs vives : vases « Ovington », « Le Verre Français », coupes et lampes.", ''],
 ];
 
@@ -64,8 +64,8 @@ export const pages = {
     </div>
     <div class="hero-photos" ${R(2)}>
       ${icon.spark}${icon.spark}${icon.spark}
-      <div class="hp-main">${photo(rel, 'decanter-baccarat', { w: 737, h: 1000, lazy: false })}<span class="glint" aria-hidden="true"></span></div>
-      <div class="hp-sub">${photo(rel, 'vase-lalique-ceylan', { w: 491, h: 1000, lazy: false })}</div>
+      <div class="hp-main">${photo(rel, 'decanter-baccarat', { lazy: false })}<span class="glint" aria-hidden="true"></span></div>
+      <div class="hp-sub">${photo(rel, 'gobelet-grave', { lazy: false })}</div>
       <div class="hp-tag">${icon.gem}<span>Carafe Baccarat<br><small>vers 1890-1900</small></span></div>
     </div>
   </div>
@@ -96,9 +96,9 @@ export const pages = {
     </div>
     <div class="houses">
       ${houses
-        .map(([n, y, d, f], k) => `<a class="house ${f.includes('wide') ? 'house--wide' : ''} ${f.includes('accent') ? 'house--accent' : ''}" href="${rel}expertises/#${n.toLowerCase().replace(/[^a-z]+/g, '-')}" ${R(k % 4)}>${photo(rel, HOUSE_PHOTO[n], { w: 800, h: 600, cls: 'house-img' })}<span class="year">${y}</span><h3>${n}</h3><p>${d}</p></a>`)
+        .map(([n, y, d, f], k) => `<a class="house ${f.includes('wide') ? 'house--wide' : ''} ${f.includes('accent') ? 'house--accent' : ''}" href="${rel}expertises/#${n.toLowerCase().replace(/[^a-z]+/g, '-')}" ${R(k % 4)}>${photo(rel, HOUSE_PHOTO[n], { cls: 'house-img' })}<span class="year">${y}</span><h3>${n}</h3><p>${d}</p></a>`)
         .join('')}
-      <a class="house house--accent" href="${rel}expertises/" ${R(3)}>${photo(rel, 'gravure-baccarat', { w: 800, h: 600, cls: 'house-img' })}<span class="year">Et aussi</span><h3>Autres signatures</h3><p>Cristal de Sèvres, Lorraine, Bohême, Murano d'époque… Envoyez-nous vos photos.</p></a>
+      <a class="house house--accent house--banner" href="${rel}expertises/" ${R(3)}>${photo(rel, 'verre-vert-boheme', { cls: 'house-img' })}<div class="hb-text"><span class="year">Et aussi</span><h3>Autres signatures</h3><p>Cristal de Sèvres, Lorraine, Bohême, Murano d'époque… Envoyez-nous vos photos.</p></div></a>
     </div>
   </div>
 </section>
@@ -126,10 +126,10 @@ export const pages = {
       <p class="lead">Carafes, vases, verres à pied, presse-papiers… voici le type de pièces qui retiennent toute notre attention.</p>
     </div>
     <div class="pieces">
-      <figure class="piece" ${R(0)}>${photo(rel, 'decanter-baccarat')}<figcaption><strong>Carafes &amp; bouchons</strong><span>Tailles diamant, bouchons facettés</span></figcaption></figure>
-      <figure class="piece" ${R(1)}>${photo(rel, 'vase-lalique-ceylan')}<figcaption><strong>Vases signés</strong><span>Lalique, Gallé, Daum, Schneider</span></figcaption></figure>
-      <figure class="piece" ${R(2)}>${photo(rel, 'verre-saint-louis')}<figcaption><strong>Services de verres</strong><span>Séries complètes ou dépareillées</span></figcaption></figure>
-      <figure class="piece" ${R(3)}>${photo(rel, 'presse-papier-baccarat', { w: 1000, h: 1000 })}<figcaption><strong>Presse-papiers</strong><span>Sulfures, fleurs et millefiori</span></figcaption></figure>
+      <figure class="piece" ${R(0)}>${photo(rel, 'lustre-anglais')}<figcaption><strong>Lustres &amp; luminaires</strong><span>Pampilles, bronzes et cristal taillé</span></figcaption></figure>
+      <figure class="piece" ${R(1)}>${photo(rel, 'lalique-cheval')}<figcaption><strong>Sculptures &amp; statuettes</strong><span>Verre dépoli, animaux, bustes</span></figcaption></figure>
+      <figure class="piece" ${R(2)}>${photo(rel, 'lalique-damiers')}<figcaption><strong>Vases signés</strong><span>Lalique, Gallé, Daum, Schneider</span></figcaption></figure>
+      <figure class="piece" ${R(3)}>${photo(rel, 'presse-papier-baccarat')}<figcaption><strong>Presse-papiers</strong><span>Sulfures, fleurs et millefiori</span></figcaption></figure>
     </div>
     <p class="note-sample" style="color:var(--paper-dim)">Exemples de pièces de musées et de collections. Envoyez-nous vos photos pour estimer les vôtres.</p>
 
@@ -144,7 +144,7 @@ export const pages = {
 </section>
 
 <section class="fullband" aria-labelledby="histoire-piece">
-  <div class="fb-img">${photo(rel, 'lustre-baccarat', { w: 1000, h: 753 })}</div>
+  <div class="fb-img">${photo(rel, 'service-verres-carafe')}</div>
   <div class="wrap fb-text">
     <h2 id="histoire-piece" ${R()}>Chaque pièce a une histoire, et une valeur</h2>
     <p class="lead" ${R(1)}>Un lustre de salon, un service de mariage, un vase hérité : envoyez quelques photos et nous vous disons ce qu'elle vaut.</p>
@@ -173,7 +173,7 @@ export const pages = {
   <p class="crumbs"><a href="${rel}">Accueil</a> / Expertises</p>
   <h1 ${R()}>Cristal ancien : grandes manufactures, signatures et pièces recherchées</h1>
   <p class="lead" ${R(1)}>Identifier la maison, la période et la technique d'une pièce est la première étape de toute estimation. Voici nos repères.</p>
-</div>${heroFig(rel, 'vase-galle-1898', 750, 1045, 'Vase d\'Émile Gallé, vers 1898')}</div></section>
+</div>${heroFig(rel, 'vase-galle-1898', 'Vase d\'Émile Gallé, vers 1898')}</div></section>
 
 <section class="section section--alt" aria-labelledby="pieces-recherchees"><div class="wrap">
   <div class="section-head" ${R()}><h2 id="pieces-recherchees">Les pièces que nous recherchons</h2></div>
@@ -189,14 +189,13 @@ export const pages = {
 
 <section class="section" aria-labelledby="exemples" style="padding-block:clamp(60px,8vw,110px)"><div class="wrap">
   <div class="section-head" ${R()}><h2 id="exemples">Quelques exemples de signatures et de styles</h2>
-  <p class="lead">Du verre gravé Art nouveau aux lustres monumentaux : le décor, la couleur et la technique orientent déjà l'identification.</p></div>
+  <p class="lead">Du verre gravé Art nouveau au cristal moulé-pressé : le décor, la couleur et la technique orientent déjà l'identification.</p></div>
   <div class="pieces">
-    <figure class="piece" ${R(0)}>${photo(rel, 'vase-galle-angraecum')}<figcaption><strong>Gallé</strong><span>Verre multicouche dégagé à l'acide</span></figcaption></figure>
-    <figure class="piece" ${R(1)}>${photo(rel, 'vase-daum-automne', { w: 1000, h: 1750 })}<figcaption><strong>Daum Nancy</strong><span>Verre gravé et émaillé</span></figcaption></figure>
-    <figure class="piece" ${R(2)}>${photo(rel, 'vase-schneider-garance', { w: 1000, h: 1950 })}<figcaption><strong>Schneider</strong><span>Verre poudré Art déco</span></figcaption></figure>
-    <figure class="piece" ${R(3)}>${photo(rel, 'vase-lalique-ceylan')}<figcaption><strong>Lalique</strong><span>Verre moulé-pressé</span></figcaption></figure>
+    <figure class="piece" ${R(0)}>${photo(rel, 'lalique-feuillage')}<figcaption><strong>Lalique</strong><span>Verre gravé, décor de fougères</span></figcaption></figure>
+    <figure class="piece" ${R(1)}>${photo(rel, 'daum-roses')}<figcaption><strong>Daum Nancy</strong><span>Verre gravé et émaillé</span></figcaption></figure>
+    <figure class="piece" ${R(2)}>${photo(rel, 'daum-clochettes')}<figcaption><strong>Daum frères</strong><span>Vase soliflore Art nouveau</span></figcaption></figure>
+    <figure class="piece" ${R(3)}>${photo(rel, 'verre-baccarat-gothique')}<figcaption><strong>Baccarat</strong><span>Cristal moulé-pressé, arcatures</span></figcaption></figure>
   </div>
-  <figure class="band" ${R()}>${photo(rel, 'lustre-baccarat', { w: 1000, h: 753 })}<figcaption>Lustre Baccarat à pampilles : les luminaires en cristal font aussi partie des pièces que nous estimons.</figcaption></figure>
 </div></section>
 
 <section class="section section--light" aria-labelledby="manufactures-detail"><div class="wrap">
@@ -225,7 +224,7 @@ export const pages = {
     <figure class="fig" ${R()}><img src="${rel}assets/img/schema-signature.svg" alt="Schéma d'une carafe : trois zones à examiner pour trouver la signature, dont le dessous de la base" width="900" height="560" loading="lazy"><figcaption>Où chercher : le dessous de la base, le col et le décor racontent l'origine de la pièce.</figcaption></figure>
     <figure class="fig" ${R(1)}><img src="${rel}assets/img/schema-gravures.svg" alt="Comparaison d'une marque à l'acide, au sable et à la pointe" width="900" height="300" loading="lazy"><figcaption>Reconnaître la technique de marquage : acide, sable ou pointe.</figcaption></figure>
   </div>
-  <figure class="band" style="margin:0 0 18px" ${R()}>${photo(rel, 'gravure-baccarat', { w: 1000, h: 874 })}<figcaption>Détail d'un cristal Baccarat gravé : l'inscription à l'acide se lit sous une lumière rasante.</figcaption></figure>
+  <figure class="band" style="margin:0 0 18px" ${R()}>${photo(rel, 'gravure-baccarat')}<figcaption>Détail d'un cristal Baccarat gravé : l'inscription à l'acide se lit sous une lumière rasante.</figcaption></figure>
   <div class="tips">
     <article class="tip" ${R(0)}><h3>Observez sous une lumière rasante</h3><p>Une marque à l'acide apparaît comme un léger dépoli mat sur le cristal brillant. Inclinez la pièce face à une fenêtre ou une lampe.</p></article>
     <article class="tip" ${R(1)}><h3>Distinguez acide, sable et pointe</h3><p>La signature à l'acide est fine et régulière ; le sablage donne un grain plus rugueux ; la gravure à la pointe forme un trait irrégulier, parfois en cursive.</p></article>
@@ -263,7 +262,7 @@ export const pages = {
   <p class="crumbs"><a href="${rel}">Accueil</a> / Rachat &amp; estimation</p>
   <h1 ${R()}>Estimation gratuite de votre cristallerie et proposition de rachat</h1>
   <p class="lead" ${R(1)}>Décrivez vos pièces, joignez vos photos : un expert vous répond rapidement. Aucun engagement, aucun frais.</p>
-</div>${heroFig(rel, 'presse-papier-baccarat', 1000, 1000, 'Presse-papier millefiori de Baccarat')}</div></section>
+</div>${heroFig(rel, 'coupe-daum-chardons', 'Coupe « Chardons », Daum Nancy')}</div></section>
 
 <section class="section" style="padding-top:clamp(40px,6vw,70px)" aria-labelledby="form-title"><div class="wrap split" style="align-items:start">
   <div>
@@ -282,7 +281,7 @@ export const pages = {
         <li>${icon.shield}<span>Signalez les éclats ou fêles, sans nettoyer ni réparer.</span></li>
       </ul>
     </div>
-    <figure class="fig" style="margin-top:28px" ${R(3)}>${photo(rel, 'service-verres-carafe', { w: 1000, h: 800 })}<figcaption>Un service de verres et sa carafe : photographiez l'ensemble, puis chaque pièce.</figcaption></figure>
+    <figure class="fig" style="margin-top:28px" ${R(3)}>${photo(rel, 'daum-arbres')}<figcaption>Une pièce bien photographiée : fond uni, lumière douce, décor bien visible.</figcaption></figure>
   </div>
   <div class="form-shell" ${R(1)} id="formulaire">${form}</div>
 </div></section>
@@ -321,7 +320,7 @@ export const pages = {
   <p class="crumbs"><a href="${rel}">Accueil</a> / À propos</p>
   <h1 ${R()}>Une passion du cristal ancien, une expertise transparente</h1>
   <p class="lead" ${R(1)}>${SITE.name} estime et rachète les pièces de cristallerie et de verrerie d'art avec le même respect que celui qu'elles méritent.</p>
-</div>${heroFig(rel, 'vase-schneider-garance', 511, 1000, 'Vase « Garance », Schneider')}</div></section>
+</div>${heroFig(rel, 'vase-daum-bleuets', 'Vase aux bleuets, Daum frères, 1898')}</div></section>
 
 <section class="section section--alt" aria-labelledby="histoire"><div class="wrap split" style="align-items:start">
   <div>
@@ -344,8 +343,8 @@ export const pages = {
   <div class="section-head" ${R()}><h2 id="savoir-faire">Le cristal, de la fournaise à la vitrine</h2>
   <p class="lead">Souffler, tailler, graver : connaître les gestes des verriers nous aide à lire une pièce et à reconnaître le travail bien fait.</p></div>
   <div class="duo">
-    <figure class="fig" ${R(0)}>${photo(rel, 'souffleur-val-saint-lambert', { w: 719, h: 1000 })}<figcaption>Souffleur de verre au Val-Saint-Lambert, en Belgique.</figcaption></figure>
-    <figure class="fig" ${R(1)}>${photo(rel, 'verres-vitrine', { w: 1000, h: 750 })}<figcaption>Verres anciens en cristal taillé, certains teintés de vert.</figcaption></figure>
+    <figure class="fig" ${R(0)}>${photo(rel, 'souffleur-val-saint-lambert')}<figcaption>Souffleur de verre au Val-Saint-Lambert, en Belgique.</figcaption></figure>
+    <figure class="fig" ${R(1)}>${photo(rel, 'verres-vitrine')}<figcaption>Verres anciens en cristal taillé, certains teintés de vert.</figcaption></figure>
   </div>
 </div></section>
 
@@ -380,11 +379,11 @@ export const pages = {
       },
     ],
     body: (rel) => `
-<section class="page-hero"><div class="wrap has-photo"><div>
+<section class="page-hero"><div class="wrap"><div>
   <p class="crumbs"><a href="${rel}">Accueil</a> / Contact &amp; FAQ</p>
   <h1 ${R()}>Contact et questions fréquentes sur l'estimation de cristal</h1>
   <p class="lead" ${R(1)}>Une question avant d'envoyer vos photos ? Écrivez-nous ou consultez les réponses ci-dessous.</p>
-</div>${heroFig(rel, 'coupe-daum-chardons', 1000, 930, 'Coupe « Chardons », Daum Nancy')}</div></section>
+</div></div></section>
 
 <section class="section section--alt" aria-labelledby="coordonnees" style="padding-block:clamp(56px,8vw,100px)"><div class="wrap contact-grid">
   <div>
@@ -394,7 +393,7 @@ export const pages = {
       <li>${icon.pin}<span><strong>Zones de déplacement</strong>${SITE.zone}. Déplacement à domicile pour les collections importantes, sur rendez-vous.</span></li>
       <li>${icon.clock}<span><strong>Réactivité</strong>On répond rapidement à chaque demande.</span></li>
     </ul>
-    <figure class="fig" style="margin-top:36px" ${R(2)}>${photo(rel, 'vase-daum-bleuets', { w: 1000, h: 1548 })}<figcaption>Vase aux bleuets, Daum frères, Nancy, 1898.</figcaption></figure>
+    
   </div>
   <div class="panel" ${R(1)}>
     <h3>Le plus rapide : le formulaire d'estimation</h3>
