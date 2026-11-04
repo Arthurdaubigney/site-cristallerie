@@ -439,3 +439,16 @@ h3 { font-size: clamp(1.45rem, 2.2vw, 1.85rem); }
   .est-aside { position: static; }
   .est-card { order: -1; }
 }
+
+/* Cartes manufactures : cadrage portrait pour voir chaque pièce en entier */
+.house-img { aspect-ratio: 4 / 5; }
+.house--wide .house-img { aspect-ratio: auto; flex: 1 1 auto; min-height: 260px; }
+.house--banner .house-img { aspect-ratio: auto; }
+
+/* Duo de photos : même hauteur */
+.duo { align-items: stretch; }
+.duo .fig { display: flex; flex-direction: column; }
+.duo .fig img { flex: 1 1 auto; min-height: 0; }
+.duo .fig:first-child img { aspect-ratio: 4 / 5; }
+.duo .fig:last-child img { aspect-ratio: auto; }
+@media (max-width: 900px) { .duo .fig:last-child img { aspect-ratio: 4 / 3; } }
