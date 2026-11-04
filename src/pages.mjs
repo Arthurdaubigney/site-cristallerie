@@ -1,10 +1,13 @@
 import { SITE, icon, photo } from './layout.mjs';
 
+const heroFig = (rel, name, w, h, cap) => `<figure class="hero-fig" data-reveal style="--i:2">${photo(rel, name, { w, h, lazy: false })}${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
+
 const R = (i = 0) => `data-reveal style="--i:${i}"`;
 const cta = (rel, label = 'Estimer ma cristallerie') =>
   `<a class="btn" href="${rel}estimation/">${label}${icon.arrow}</a>`;
 
 // Fiches des grandes manufactures (repères historiques à valider par l'expert avant mise en ligne)
+const HOUSE_PHOTO = {"Baccarat": "lustre-baccarat", "Saint-Louis": "verre-saint-louis", "Lalique": "vase-lalique-ceylan", "Daum": "vase-daum-automne", "Val Saint-Lambert": "souffleur-val-saint-lambert", "Gallé": "vase-galle-angraecum", "Schneider": "vase-schneider-garance"};
 const houses = [
   ['Baccarat', 'Fondée en 1764', "Le cristal des cours et des palais : services de verres, carafes, lustres et pièces monumentales. Marque gravée à l'acide.", 'wide accent'],
   ['Saint-Louis', 'Depuis 1586', 'Plus ancienne cristallerie de France : modèles Tommy, Thistle, Bubbles, boules presse-papier.', ''],
@@ -54,14 +57,16 @@ export const pages = {
       <p class="lead" ${R(2)}>Baccarat, Saint-Louis, Lalique, Daum, Gallé… Envoyez quelques photos : nous estimons vos pièces, nous vous répondons rapidement et nous vous proposons un rachat au comptant, en toute discrétion.</p>
       <div class="cta-row" ${R(3)}>${cta(rel)}<a class="btn btn--ghost" href="${rel}expertises/">Découvrir les pièces recherchées</a></div>
       <div class="hero-stats" ${R(4)}>
-        <div><strong>Rapide</strong>une réponse sans attendre</div>
-        <div><strong>0 €</strong>de frais, sans engagement</div>
-        <div><strong>7</strong>grandes manufactures expertisées</div>
+        <div><strong>Rapide</strong>réponse sans attente</div>
+        <div><strong>0 €</strong>sans engagement</div>
+        <div><strong>7</strong>manufactures expertisées</div>
       </div>
     </div>
-    <div class="crystal" aria-hidden="false" ${R(2)}>
-      ${icon.spark}${icon.spark}${icon.spark}${icon.spark}
-      <img src="${rel}assets/img/carafe.svg" width="440" height="550" alt="Carafe en cristal taillé reflétant la lumière, exemple de pièce que nous rachetons" fetchpriority="high">
+    <div class="hero-photos" ${R(2)}>
+      ${icon.spark}${icon.spark}${icon.spark}
+      <div class="hp-main">${photo(rel, 'decanter-baccarat', { w: 737, h: 1000, lazy: false })}<span class="glint" aria-hidden="true"></span></div>
+      <div class="hp-sub">${photo(rel, 'vase-lalique-ceylan', { w: 491, h: 1000, lazy: false })}</div>
+      <div class="hp-tag">${icon.gem}<span>Carafe Baccarat<br><small>vers 1890-1900</small></span></div>
     </div>
   </div>
 </section>
@@ -91,9 +96,9 @@ export const pages = {
     </div>
     <div class="houses">
       ${houses
-        .map(([n, y, d, f], k) => `<a class="house ${f.includes('wide') ? 'house--wide' : ''} ${f.includes('accent') ? 'house--accent' : ''}" href="${rel}expertises/#${n.toLowerCase().replace(/[^a-z]+/g, '-')}" ${R(k % 4)}><span class="year">${y}</span><h3>${n}</h3><p>${d}</p></a>`)
+        .map(([n, y, d, f], k) => `<a class="house ${f.includes('wide') ? 'house--wide' : ''} ${f.includes('accent') ? 'house--accent' : ''}" href="${rel}expertises/#${n.toLowerCase().replace(/[^a-z]+/g, '-')}" ${R(k % 4)}>${photo(rel, HOUSE_PHOTO[n], { w: 800, h: 600, cls: 'house-img' })}<span class="year">${y}</span><h3>${n}</h3><p>${d}</p></a>`)
         .join('')}
-      <a class="house house--accent" href="${rel}expertises/" ${R(3)}><span class="year">Et aussi</span><h3>Autres signatures</h3><p>Cristal de Sèvres, Lorraine, Bohême, Murano d'époque… Envoyez-nous vos photos.</p></a>
+      <a class="house house--accent" href="${rel}expertises/" ${R(3)}>${photo(rel, 'gravure-baccarat', { w: 800, h: 600, cls: 'house-img' })}<span class="year">Et aussi</span><h3>Autres signatures</h3><p>Cristal de Sèvres, Lorraine, Bohême, Murano d'époque… Envoyez-nous vos photos.</p></a>
     </div>
   </div>
 </section>
@@ -105,9 +110,9 @@ export const pages = {
       <h2 id="etapes">Comment ça marche ?</h2>
     </div>
     <ol class="steps">
-      <li class="step" ${R(0)}><h3>Envoyez photos &amp; signatures</h3><p>Remplissez le formulaire en ligne et joignez quelques clichés : vue d'ensemble, détails de taille, dessous du pied et signature.</p></li>
-      <li class="step" ${R(1)}><h3>Recevez une estimation gratuite</h3><p>Un expert identifie la manufacture, la période et l'état, puis vous répond rapidement avec une valeur détaillée.</p></li>
-      <li class="step" ${R(2)}><h3>Acceptez le rachat cash</h3><p>Si notre proposition vous convient, nous organisons le retrait ou le transport assuré et vous réglons immédiatement.</p></li>
+      <li class="step" ${R(0)}><img class="step-ill" src="${rel}assets/img/etape-1.svg" alt="" width="240" height="160" loading="lazy"><h3>Envoyez photos &amp; signatures</h3><p>Remplissez le formulaire en ligne et joignez quelques clichés : vue d'ensemble, détails de taille, dessous du pied et signature.</p></li>
+      <li class="step" ${R(1)}><img class="step-ill" src="${rel}assets/img/etape-2.svg" alt="" width="240" height="160" loading="lazy"><h3>Recevez une estimation gratuite</h3><p>Un expert identifie la manufacture, la période et l'état, puis vous répond rapidement avec une valeur détaillée.</p></li>
+      <li class="step" ${R(2)}><img class="step-ill" src="${rel}assets/img/etape-3.svg" alt="" width="240" height="160" loading="lazy"><h3>Acceptez le rachat cash</h3><p>Si notre proposition vous convient, nous organisons le retrait ou le transport assuré et vous réglons immédiatement.</p></li>
     </ol>
     <div class="cta-row" style="margin-top:48px" ${R()}>${cta(rel, 'Demander une expertise gratuite')}</div>
   </div>
@@ -138,6 +143,15 @@ export const pages = {
   </div>
 </section>
 
+<section class="fullband" aria-labelledby="histoire-piece">
+  <div class="fb-img">${photo(rel, 'lustre-baccarat', { w: 1000, h: 753 })}</div>
+  <div class="wrap fb-text">
+    <h2 id="histoire-piece" ${R()}>Chaque pièce a une histoire, et une valeur</h2>
+    <p class="lead" ${R(1)}>Un lustre de salon, un service de mariage, un vase hérité : envoyez quelques photos et nous vous disons ce qu'elle vaut.</p>
+    <div class="cta-row" ${R(2)}>${cta(rel)}</div>
+  </div>
+</section>
+
 <section class="section" aria-labelledby="cta-final">
   <div class="wrap">
     <div class="cta-band" ${R()}>
@@ -155,11 +169,11 @@ export const pages = {
     description: "Guide d'expertise du cristal et de la verrerie d'art : Baccarat, Saint-Louis, Lalique, Daum, Gallé, Schneider, Val Saint-Lambert. Reconnaître une estampille ou une signature gravée.",
     crumbs: [['Expertises', 'expertises']],
     body: (rel) => `
-<section class="page-hero"><div class="wrap">
+<section class="page-hero"><div class="wrap has-photo"><div>
   <p class="crumbs"><a href="${rel}">Accueil</a> / Expertises</p>
   <h1 ${R()}>Cristal ancien : grandes manufactures, signatures et pièces recherchées</h1>
   <p class="lead" ${R(1)}>Identifier la maison, la période et la technique d'une pièce est la première étape de toute estimation. Voici nos repères.</p>
-</div></section>
+</div>${heroFig(rel, 'vase-galle-1898', 750, 1045, 'Vase d\'Émile Gallé, vers 1898')}</div></section>
 
 <section class="section section--alt" aria-labelledby="pieces-recherchees"><div class="wrap">
   <div class="section-head" ${R()}><h2 id="pieces-recherchees">Les pièces que nous recherchons</h2></div>
@@ -207,6 +221,10 @@ export const pages = {
 <section class="section" aria-labelledby="signatures"><div class="wrap">
   <div class="section-head" ${R()}><h2 id="signatures">Conseils pour identifier estampilles et signatures</h2>
   <p class="lead">Quelques gestes simples avant de nous écrire. Surtout, ne nettoyez pas et ne frottez pas la marque.</p></div>
+  <div class="schemas">
+    <figure class="fig" ${R()}><img src="${rel}assets/img/schema-signature.svg" alt="Schéma d'une carafe : trois zones à examiner pour trouver la signature, dont le dessous de la base" width="900" height="560" loading="lazy"><figcaption>Où chercher : le dessous de la base, le col et le décor racontent l'origine de la pièce.</figcaption></figure>
+    <figure class="fig" ${R(1)}><img src="${rel}assets/img/schema-gravures.svg" alt="Comparaison d'une marque à l'acide, au sable et à la pointe" width="900" height="300" loading="lazy"><figcaption>Reconnaître la technique de marquage : acide, sable ou pointe.</figcaption></figure>
+  </div>
   <figure class="band" style="margin:0 0 18px" ${R()}>${photo(rel, 'gravure-baccarat', { w: 1000, h: 874 })}<figcaption>Détail d'un cristal Baccarat gravé : l'inscription à l'acide se lit sous une lumière rasante.</figcaption></figure>
   <div class="tips">
     <article class="tip" ${R(0)}><h3>Observez sous une lumière rasante</h3><p>Une marque à l'acide apparaît comme un léger dépoli mat sur le cristal brillant. Inclinez la pièce face à une fenêtre ou une lampe.</p></article>
@@ -241,11 +259,11 @@ export const pages = {
         ? `<div class="form-placeholder"><div><strong>Votre formulaire Tally s'affichera ici</strong><p>Dans <code>src/layout.mjs</code>, remplacez <code>tallyId</code> par l'identifiant de votre formulaire, puis lancez <code>node build.mjs</code>.</p><p>En attendant : <a href="mailto:${SITE.email}?subject=Demande%20d%27estimation">${SITE.email}</a></p></div></div>`
         : `<iframe data-tally-src="https://tally.so/embed/${SITE.tallyId}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" title="Formulaire d'estimation de cristallerie"></iframe>`;
       return `
-<section class="page-hero"><div class="wrap">
+<section class="page-hero"><div class="wrap has-photo"><div>
   <p class="crumbs"><a href="${rel}">Accueil</a> / Rachat &amp; estimation</p>
   <h1 ${R()}>Estimation gratuite de votre cristallerie et proposition de rachat</h1>
   <p class="lead" ${R(1)}>Décrivez vos pièces, joignez vos photos : un expert vous répond rapidement. Aucun engagement, aucun frais.</p>
-</div></section>
+</div>${heroFig(rel, 'presse-papier-baccarat', 1000, 1000, 'Presse-papier millefiori de Baccarat')}</div></section>
 
 <section class="section" style="padding-top:clamp(40px,6vw,70px)" aria-labelledby="form-title"><div class="wrap split" style="align-items:start">
   <div>
@@ -269,6 +287,17 @@ export const pages = {
   <div class="form-shell" ${R(1)} id="formulaire">${form}</div>
 </div></section>
 
+<section class="section" aria-labelledby="photos-titre" style="padding-block:clamp(56px,8vw,100px)"><div class="wrap">
+  <div class="section-head" ${R()}><h2 id="photos-titre">Les quatre photos qui font une bonne estimation</h2>
+  <p class="lead">Un téléphone et une bonne lumière suffisent. Voici les vues qui nous permettent d'identifier votre pièce.</p></div>
+  <div class="shots">
+    <article class="shot" ${R(0)}><svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M60 22h40l-4 44c-2 12-10 18-16 18s-14-6-16-18zM80 84v20M66 108h28" fill="rgba(226,232,240,.08)"/><path d="M60 38h40M58 52h44" opacity=".45"/></svg><h3>Vue d'ensemble</h3><p>La pièce entière, de face, sur fond uni.</p></article>
+    <article class="shot" ${R(1)}><svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="80" cy="62" rx="46" ry="30" fill="rgba(226,232,240,.08)"/><ellipse cx="80" cy="62" rx="32" ry="20" opacity=".5"/><path d="M62 64c8-12 12 6 20-4s10-6 16 2" stroke="#F5A524" stroke-width="2.5"/></svg><h3>Le dessous</h3><p>La base, où se cache souvent la signature.</p></article>
+    <article class="shot" ${R(2)}><svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M30 60l25-30h50l25 30-25 30H55z" fill="rgba(226,232,240,.08)"/><path d="M55 30l25 30 25-30M55 90l25-30 25 30M30 60h100" opacity=".5"/></svg><h3>Détail de la taille</h3><p>Un gros plan sur le décor ou la gravure.</p></article>
+    <article class="shot" ${R(3)}><svg viewBox="0 0 160 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M44 40c10-14 22-14 36 0s26 14 36 0v44c-10 14-22 14-36 0S54 98 44 84z" fill="rgba(226,232,240,.08)"/><path d="M92 28l-8 16 10 6-8 18" stroke="#F5A524" stroke-width="2.5"/></svg><h3>Les défauts</h3><p>Éclat, fêle, rayure : montrez-les sans les cacher.</p></article>
+  </div>
+</div></section>
+
 <section class="section section--alt" aria-labelledby="rassurance"><div class="wrap">
   <div class="section-head" ${R()}><h2 id="rassurance">Pourquoi nous confier vos pièces</h2></div>
   <div class="trust">
@@ -288,11 +317,11 @@ export const pages = {
     description: "Passionnés d'arts de la table et de verrerie ancienne, nous estimons et rachetons cristal, vases et verres de collection avec transparence, rigueur et discrétion.",
     crumbs: [['À propos', 'a-propos']],
     body: (rel) => `
-<section class="page-hero"><div class="wrap">
+<section class="page-hero"><div class="wrap has-photo"><div>
   <p class="crumbs"><a href="${rel}">Accueil</a> / À propos</p>
   <h1 ${R()}>Une passion du cristal ancien, une expertise transparente</h1>
   <p class="lead" ${R(1)}>${SITE.name} estime et rachète les pièces de cristallerie et de verrerie d'art avec le même respect que celui qu'elles méritent.</p>
-</div></section>
+</div>${heroFig(rel, 'vase-schneider-garance', 511, 1000, 'Vase « Garance », Schneider')}</div></section>
 
 <section class="section section--alt" aria-labelledby="histoire"><div class="wrap split" style="align-items:start">
   <div>
@@ -351,11 +380,11 @@ export const pages = {
       },
     ],
     body: (rel) => `
-<section class="page-hero"><div class="wrap">
+<section class="page-hero"><div class="wrap has-photo"><div>
   <p class="crumbs"><a href="${rel}">Accueil</a> / Contact &amp; FAQ</p>
   <h1 ${R()}>Contact et questions fréquentes sur l'estimation de cristal</h1>
   <p class="lead" ${R(1)}>Une question avant d'envoyer vos photos ? Écrivez-nous ou consultez les réponses ci-dessous.</p>
-</div></section>
+</div>${heroFig(rel, 'coupe-daum-chardons', 1000, 930, 'Coupe « Chardons », Daum Nancy')}</div></section>
 
 <section class="section section--alt" aria-labelledby="coordonnees" style="padding-block:clamp(56px,8vw,100px)"><div class="wrap contact-grid">
   <div>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Inter, Arial, sans-serif" role="img" aria-labelledby="t d"><title id="t">Où chercher la signature d'une pièce en cristal</title><desc id="d">Schéma d'une carafe avec trois zones à examiner : le dessous de la base, le col et la taille ; vue du dessous avec une signature gravée.</desc>
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#94A3B8" stop-opacity=".5"/><stop offset=".5" stop-color="#E2E8F0" stop-opacity=".12"/><stop offset="1" stop-color="#3B82F6" stop-opacity=".3"/></linearGradient>
+<clipPath id="c"><path d="M178 100H222L226 190C226 225 300 250 300 340C300 440 292 500 282 522H118C108 500 100 440 100 340C100 250 174 225 174 190Z"/></clipPath></defs>
+<g transform="translate(40 10) scale(.95)" stroke="#E2E8F0" stroke-linejoin="round" fill="none">
+<polygon points="200,18 234,58 200,100 166,58" fill="url(#g)" stroke-width="1.5"/>
+<path d="M178 100H222L226 190C226 225 300 250 300 340C300 440 292 500 282 522H118C108 500 100 440 100 340C100 250 174 225 174 190Z" fill="url(#g)" stroke-width="1.5"/>
+<g clip-path="url(#c)" stroke-opacity=".45"><path d="M140 250V522M170 230V522M200 220V522M230 230V522M260 250V522M100 340L200 280L300 340M100 400L200 340L300 400M100 460L200 400L300 460M100 340L200 400L300 340M100 400L200 460L300 400"/></g>
+<ellipse cx="200" cy="522" rx="82" ry="8" fill="url(#g)"/>
+</g>
+<g stroke="#F5A524" stroke-width="2" fill="none"><path d="M215 520 L470 505M258 170 L470 150M295 330 L470 300"/></g>
+<g fill="#F5A524"><circle cx="215" cy="520" r="5"/><circle cx="258" cy="170" r="5"/><circle cx="295" cy="330" r="5"/></g>
+<g fill="#0B0F17" stroke="#F5A524" stroke-width="2"><circle cx="490" cy="505" r="20"/><circle cx="490" cy="150" r="20"/><circle cx="490" cy="300" r="20"/></g>
+<g fill="#F5A524" font-weight="700" font-size="20" text-anchor="middle"><text x="490" y="512">1</text><text x="490" y="157">2</text><text x="490" y="307">3</text></g>
+<g fill="#E2E8F0" font-size="19"><text x="525" y="496" font-weight="600">Dessous de la base</text><text x="525" y="520" fill="#B9C3D2" font-size="16">Là où se trouve le plus souvent la signature</text>
+<text x="525" y="141" font-weight="600">Col, bouchon et bord</text><text x="525" y="165" fill="#B9C3D2" font-size="16">Numéro gravé, marque sur le bouchon</text>
+<text x="525" y="291" font-weight="600">Taille et décor</text><text x="525" y="315" fill="#B9C3D2" font-size="16">Le style situe la manufacture et l'époque</text></g>
+<g transform="translate(640 340)"><circle cx="100" cy="100" r="96" fill="url(#g)" stroke="#E2E8F0" stroke-width="1.5"/><circle cx="100" cy="100" r="70" fill="none" stroke="#E2E8F0" stroke-opacity=".4"/>
+<path d="M58 106c12-22 22 10 34-6s14-14 24 2 18-8 26-14" fill="none" stroke="#F5A524" stroke-width="3" stroke-linecap="round"/>
+<text x="100" y="228" text-anchor="middle" fill="#B9C3D2" font-size="15">Vue du dessous : signature gravée</text></g>
+</svg>
