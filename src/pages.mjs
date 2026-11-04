@@ -256,7 +256,7 @@ export const pages = {
       const placeholder = SITE.tallyId === 'FORM_ID';
       const form = placeholder
         ? `<div class="form-placeholder"><div><strong>Votre formulaire Tally s'affichera ici</strong><p>Dans <code>src/layout.mjs</code>, remplacez <code>tallyId</code> par l'identifiant de votre formulaire, puis lancez <code>node build.mjs</code>.</p><p>En attendant : <a href="mailto:${SITE.email}?subject=Demande%20d%27estimation">${SITE.email}</a></p></div></div>`
-        : `<iframe data-merci="${rel}merci/" data-tally-src="https://tally.so/embed/${SITE.tallyId}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" title="Formulaire d'estimation de cristallerie"></iframe>`;
+        : `<iframe data-merci="${rel}merci/" data-tally-src="https://tally.so/embed/${SITE.tallyId}?hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" title="Formulaire d'estimation de cristallerie"></iframe>`;
       return `
 <section class="page-hero"><div class="wrap has-photo"><div>
   <p class="crumbs"><a href="${rel}">Accueil</a> / Rachat &amp; estimation</p>
@@ -264,18 +264,16 @@ export const pages = {
   <p class="lead" ${R(1)}>Décrivez vos pièces, joignez vos photos : un expert vous répond rapidement. Aucun engagement, aucun frais.</p>
 </div>${heroFig(rel, 'coupe-daum-chardons', 'Coupe « Chardons », Daum Nancy')}</div></section>
 
-<section class="section" style="padding-top:clamp(40px,6vw,70px)" aria-labelledby="form-title"><div class="wrap">
-  <div class="split" style="align-items:start;margin-bottom:clamp(32px,5vw,56px)">
-    <div>
-      <h2 id="form-title" ${R()}>Comment se déroule l'expertise</h2>
-      <ul class="checks" ${R(1)}>
-        <li>${icon.check}<span><strong>Vous envoyez vos photos</strong> via le formulaire : ensemble, détails, dessous du pied, signature.</span></li>
-        <li>${icon.check}<span><strong>Nous identifions vos pièces</strong> : manufacture, période, technique, état de conservation.</span></li>
-        <li>${icon.check}<span><strong>Vous recevez une estimation</strong> détaillée et une proposition de rachat, on vous répond rapidement.</span></li>
-        <li>${icon.check}<span><strong>Vous décidez librement.</strong> Si vous acceptez, retrait à domicile ou transport assuré, puis paiement immédiat.</span></li>
-      </ul>
-    </div>
-    <div class="panel" ${R(2)}>
+<section class="section est" aria-labelledby="form-title"><div class="wrap est-grid">
+  <aside class="est-aside">
+    <h2 id="form-title" ${R()}>Comment se déroule l'expertise</h2>
+    <ol class="vsteps" ${R(1)}>
+      <li><strong>Vous envoyez vos photos</strong><span>Ensemble, détails, dessous du pied, signature.</span></li>
+      <li><strong>Nous identifions vos pièces</strong><span>Manufacture, période, technique, état de conservation.</span></li>
+      <li><strong>Vous recevez une estimation</strong><span>Détaillée, avec une proposition de rachat. On vous répond rapidement.</span></li>
+      <li><strong>Vous décidez librement</strong><span>Retrait à domicile ou transport assuré, puis paiement immédiat si vous acceptez.</span></li>
+    </ol>
+    <div class="est-tips" ${R(2)}>
       <h3>Pour une estimation précise</h3>
       <ul class="checks">
         <li>${icon.camera}<span>Photographiez chaque pièce sur fond uni, en pleine lumière.</span></li>
@@ -283,8 +281,17 @@ export const pages = {
         <li>${icon.shield}<span>Signalez les éclats ou fêles, sans nettoyer ni réparer.</span></li>
       </ul>
     </div>
+  </aside>
+  <div class="est-card" ${R(1)} id="formulaire">
+    <div class="est-card-head">
+      <span class="est-ico">${icon.gem}</span>
+      <h2>Votre demande d'estimation</h2>
+      <p>Quelques informations et vos photos : nous nous occupons du reste.</p>
+      <ul class="est-chips"><li>${icon.check}Gratuit</li><li>${icon.check}Sans engagement</li><li>${icon.check}Confidentiel</li></ul>
+    </div>
+    <div class="est-card-body">${form}</div>
+    <p class="est-card-foot">${icon.shield}<span>Vos informations restent confidentielles et ne sont jamais revendues. <a href="${rel}mentions-legales/">En savoir plus</a></span></p>
   </div>
-  <div class="form-shell" ${R(1)} id="formulaire">${form}</div>
 </div></section>
 
 <section class="section" aria-labelledby="photos-titre" style="padding-block:clamp(56px,8vw,100px)"><div class="wrap">

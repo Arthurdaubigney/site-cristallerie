@@ -404,3 +404,38 @@ h3 { font-size: clamp(1.45rem, 2.2vw, 1.85rem); }
 @media (max-width: 600px) { .house--banner { flex-direction: column; } .house--banner .house-img { width: 100%; aspect-ratio: 16 / 9; min-height: 0; } .house--banner .hb-text { padding: 20px 24px 26px; } }
 .hero h1 { font-size: clamp(2.5rem, 4.7vw, 4.2rem); }
 .hero { padding-block: clamp(40px, 5vw, 70px) clamp(60px, 7vw, 100px); }
+
+/* Page estimation : mise en page du formulaire */
+.est { padding-top: clamp(40px, 6vw, 70px); }
+.est-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+.est-aside { position: sticky; top: calc(var(--header-h) + 28px); }
+.vsteps { list-style: none; margin: 28px 0 0; padding: 0; counter-reset: v; display: grid; gap: 0; }
+.vsteps li { counter-increment: v; position: relative; padding: 0 0 26px 62px; }
+.vsteps li::before { content: counter(v); position: absolute; left: 0; top: 0; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; color: var(--amber-light); background: rgba(245, 165, 36, .1); border: 1px solid rgba(245, 165, 36, .45); }
+.vsteps li::after { content: ""; position: absolute; left: 20px; top: 48px; bottom: 6px; width: 1px; background: rgba(226, 232, 240, .18); }
+.vsteps li:last-child { padding-bottom: 0; } .vsteps li:last-child::after { display: none; }
+.vsteps strong { display: block; font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; line-height: 1.2; margin-bottom: 4px; }
+.vsteps span { color: var(--ink-dim); font-size: .97rem; display: block; }
+.est-tips { margin-top: 36px; padding: 26px 28px; border-radius: 22px; background: rgba(226, 232, 240, .05); border: 1px solid rgba(226, 232, 240, .12); }
+.est-tips h3 { font-size: 1.45rem; margin-bottom: 14px; }
+.est-tips .checks svg { width: 20px; height: 20px; }
+.est-card { border-radius: 28px; overflow: hidden; background: #fff; color: var(--paper-ink); box-shadow: 0 50px 100px -40px rgba(0, 0, 0, .9), 0 0 0 1px rgba(226, 232, 240, .15); }
+.est-card-head { position: relative; padding: 34px clamp(24px, 4vw, 44px) 30px; color: var(--ink); background: radial-gradient(500px 220px at 100% 0%, rgba(59, 130, 246, .4), transparent 70%), linear-gradient(160deg, #15213d, #0b0f17); }
+.est-ico { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: rgba(245, 165, 36, .14); border: 1px solid rgba(245, 165, 36, .5); color: var(--amber-light); margin-bottom: 16px; }
+.est-ico svg { width: 24px; height: 24px; }
+.est-card-head h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 8px; color: var(--ink); }
+.est-card-head p { margin: 0 0 18px; color: var(--ink-dim); max-width: 46ch; }
+.est-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.est-chips li { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px 6px 10px; border-radius: 999px; font-size: .85rem; font-weight: 500; background: rgba(226, 232, 240, .08); border: 1px solid rgba(226, 232, 240, .2); }
+.est-chips svg { width: 15px; height: 15px; color: var(--amber-light); }
+.est-card-body { padding: clamp(18px, 3vw, 32px) clamp(14px, 3vw, 36px) 8px; background: #fff; }
+.est-card-body iframe { width: 100%; border: 0; min-height: 520px; display: block; }
+.est-card-body .form-placeholder { min-height: 360px; }
+.est-card-foot { display: flex; gap: 12px; align-items: center; margin: 0; padding: 18px clamp(24px, 4vw, 44px); background: var(--paper-2); font-size: .86rem; color: var(--paper-dim); }
+.est-card-foot svg { flex: none; width: 20px; height: 20px; color: #1d4fb8; }
+.est-card-foot a { color: var(--paper-ink); text-underline-offset: 3px; }
+@media (max-width: 960px) {
+  .est-grid { grid-template-columns: 1fr; }
+  .est-aside { position: static; }
+  .est-card { order: -1; }
+}
