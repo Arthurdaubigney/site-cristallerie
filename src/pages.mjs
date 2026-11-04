@@ -264,16 +264,18 @@ export const pages = {
   <p class="lead" ${R(1)}>Décrivez vos pièces, joignez vos photos : un expert vous répond rapidement. Aucun engagement, aucun frais.</p>
 </div>${heroFig(rel, 'coupe-daum-chardons', 'Coupe « Chardons », Daum Nancy')}</div></section>
 
-<section class="section" style="padding-top:clamp(40px,6vw,70px)" aria-labelledby="form-title"><div class="wrap split" style="align-items:start">
-  <div>
-    <h2 id="form-title" ${R()}>Comment se déroule l'expertise</h2>
-    <ul class="checks" ${R(1)}>
-      <li>${icon.check}<span><strong>Vous envoyez vos photos</strong> via le formulaire : ensemble, détails, dessous du pied, signature.</span></li>
-      <li>${icon.check}<span><strong>Nous identifions vos pièces</strong> : manufacture, période, technique, état de conservation.</span></li>
-      <li>${icon.check}<span><strong>Vous recevez une estimation</strong> détaillée et une proposition de rachat, on vous répond rapidement.</span></li>
-      <li>${icon.check}<span><strong>Vous décidez librement.</strong> Si vous acceptez, retrait à domicile ou transport assuré, puis paiement immédiat.</span></li>
-    </ul>
-    <div class="panel" style="margin-top:36px" ${R(2)}>
+<section class="section" style="padding-top:clamp(40px,6vw,70px)" aria-labelledby="form-title"><div class="wrap">
+  <div class="split" style="align-items:start;margin-bottom:clamp(32px,5vw,56px)">
+    <div>
+      <h2 id="form-title" ${R()}>Comment se déroule l'expertise</h2>
+      <ul class="checks" ${R(1)}>
+        <li>${icon.check}<span><strong>Vous envoyez vos photos</strong> via le formulaire : ensemble, détails, dessous du pied, signature.</span></li>
+        <li>${icon.check}<span><strong>Nous identifions vos pièces</strong> : manufacture, période, technique, état de conservation.</span></li>
+        <li>${icon.check}<span><strong>Vous recevez une estimation</strong> détaillée et une proposition de rachat, on vous répond rapidement.</span></li>
+        <li>${icon.check}<span><strong>Vous décidez librement.</strong> Si vous acceptez, retrait à domicile ou transport assuré, puis paiement immédiat.</span></li>
+      </ul>
+    </div>
+    <div class="panel" ${R(2)}>
       <h3>Pour une estimation précise</h3>
       <ul class="checks">
         <li>${icon.camera}<span>Photographiez chaque pièce sur fond uni, en pleine lumière.</span></li>
@@ -281,7 +283,6 @@ export const pages = {
         <li>${icon.shield}<span>Signalez les éclats ou fêles, sans nettoyer ni réparer.</span></li>
       </ul>
     </div>
-    <figure class="fig" style="margin-top:28px" ${R(3)}>${photo(rel, 'daum-arbres')}<figcaption>Une pièce bien photographiée : fond uni, lumière douce, décor bien visible.</figcaption></figure>
   </div>
   <div class="form-shell" ${R(1)} id="formulaire">${form}</div>
 </div></section>
