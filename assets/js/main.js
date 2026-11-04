@@ -63,6 +63,14 @@
     s.src = 'https://tally.so/widgets/embed.js';
     s.async = true;
     s.onload = () => window.Tally && window.Tally.loadEmbeds();
+    // Redirection vers la page de remerciement une fois le formulaire envoyé
+    addEventListener('message', (e) => {
+      try {
+        if (!/(^|\.)tally\.so$/.test(new URL(e.origin).hostname)) return;
+        const d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (d && d.event === 'Tally.FormSubmitted') location.href = tally.dataset.merci;
+      } catch (_) {}
+    });
     document.body.appendChild(s);
   }
 })();

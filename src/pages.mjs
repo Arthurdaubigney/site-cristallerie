@@ -256,7 +256,7 @@ export const pages = {
       const placeholder = SITE.tallyId === 'FORM_ID';
       const form = placeholder
         ? `<div class="form-placeholder"><div><strong>Votre formulaire Tally s'affichera ici</strong><p>Dans <code>src/layout.mjs</code>, remplacez <code>tallyId</code> par l'identifiant de votre formulaire, puis lancez <code>node build.mjs</code>.</p><p>En attendant : <a href="mailto:${SITE.email}?subject=Demande%20d%27estimation">${SITE.email}</a></p></div></div>`
-        : `<iframe data-tally-src="https://tally.so/embed/${SITE.tallyId}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" title="Formulaire d'estimation de cristallerie"></iframe>`;
+        : `<iframe data-merci="${rel}merci/" data-tally-src="https://tally.so/embed/${SITE.tallyId}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" title="Formulaire d'estimation de cristallerie"></iframe>`;
       return `
 <section class="page-hero"><div class="wrap has-photo"><div>
   <p class="crumbs"><a href="${rel}">Accueil</a> / Rachat &amp; estimation</p>

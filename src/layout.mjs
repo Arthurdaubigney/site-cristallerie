@@ -7,7 +7,7 @@ export const SITE = {
   url: 'https://www.maison-eclat.fr', // À REMPLACER par le vrai domaine
   email: 'francoisseculapub@gmail.com',
   zone: 'Paris, Île-de-France et toute la France',
-  tallyId: 'FORM_ID', // À REMPLACER par l'identifiant du formulaire Tally (tally.so/r/XXXXXX)
+  tallyId: '7XqAM0', // formulaire Tally : https://tally.so/r/7XqAM0
 };
 
 const i = (d, extra = '') =>
