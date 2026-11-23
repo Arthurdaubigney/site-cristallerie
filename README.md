@@ -1,4 +1,4 @@
-# Maison Éclat — site de rachat et d'estimation de cristallerie
+# Maison Cristallerie — site de rachat et d'estimation de cristallerie
 
 Site statique multi-pages (HTML/CSS/JS, sans dépendance). Les pages sont générées depuis `src/` :
 

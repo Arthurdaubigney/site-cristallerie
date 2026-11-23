@@ -2,7 +2,7 @@ import { photos } from './photos.mjs';
 
 // Gabarit commun : configuration, <head> SEO, en-tête, pied de page, icônes.
 export const SITE = {
-  name: 'Maison Éclat',
+  name: 'Maison Cristallerie',
   tagline: 'Expertise & rachat de cristallerie',
   url: 'https://www.maison-eclat.fr', // À REMPLACER par le vrai domaine
   email: 'francoisseculapub@gmail.com',
