@@ -4,7 +4,7 @@ import { photos } from './photos.mjs';
 export const SITE = {
   name: 'Maison Cristallerie',
   tagline: 'Expertise & rachat de cristallerie',
-  url: 'https://maison-cristallerie.fr',
+  url: 'https://www.maison-cristallerie.fr',
   email: 'francoisseculapub@gmail.com',
   zone: 'Paris, Île-de-France et toute la France',
   tallyId: '7XqAM0', // formulaire Tally : https://tally.so/r/7XqAM0
