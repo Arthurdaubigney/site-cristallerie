@@ -452,3 +452,14 @@ h3 { font-size: clamp(1.45rem, 2.2vw, 1.85rem); }
 .duo .fig:first-child img { aspect-ratio: 4 / 5; }
 .duo .fig:last-child img { aspect-ratio: auto; }
 @media (max-width: 900px) { .duo .fig:last-child img { aspect-ratio: 4 / 3; } }
+
+/* Bandeau de consentement */
+.consent { position: fixed; z-index: 60; left: 20px; bottom: 20px; max-width: 460px; padding: 20px 22px; border-radius: 20px; background: rgba(11, 15, 23, .94); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border: 1px solid rgba(226, 232, 240, .22); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8); color: var(--ink); }
+.consent[hidden] { display: none; }
+.consent p { margin: 0 0 14px; font-size: .9rem; line-height: 1.5; color: var(--ink-dim); }
+.consent a { color: var(--ink); text-underline-offset: 3px; }
+.consent-btns { display: flex; gap: 10px; }
+.consent-btns .btn { flex: 1; }
+.linklike { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.linklike:hover { color: var(--ink); }
+@media (max-width: 600px) { .consent { left: 12px; right: 12px; bottom: 12px; max-width: none; } }
