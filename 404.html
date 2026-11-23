@@ -27,6 +27,15 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Maison Cristallerie","url":"https://www.maison-cristallerie.fr/","inLanguage":"fr-FR"}]</script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+try { if (localStorage.getItem('mc-consent') === 'granted') gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' }); } catch (e) {}
+gtag('js', new Date());
+gtag('config', 'AW-18503417665');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18503417665"></script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -52,9 +61,13 @@
       <div><h2>Contact</h2><ul><li><a href="estimation/">Formulaire d'estimation</a></li><li>Paris, Île-de-France et toute la France</li></ul></div>
     </div>
     
-    <div class="foot-bottom"><span>© <span id="y">2026</span> Maison Cristallerie. Tous droits réservés.</span><span>Estimation gratuite · Sans engagement · <a href="mentions-legales/">Mentions légales</a></span></div>
+    <div class="foot-bottom"><span>© <span id="y">2026</span> Maison Cristallerie. Tous droits réservés.</span><span>Estimation gratuite · Sans engagement · <a href="mentions-legales/">Mentions légales</a> · <button type="button" class="linklike" data-consent-open>Cookies</button></span></div>
   </div>
 </footer>
+<div class="consent" id="consent" role="dialog" aria-live="polite" aria-label="Cookies" hidden>
+  <p>Nous utilisons un cookie de mesure publicitaire (Google Ads) pour évaluer l'efficacité de nos annonces. Vous pouvez l'accepter ou le refuser, sans conséquence sur votre navigation. <a href="mentions-legales/#cookies">En savoir plus</a></p>
+  <div class="consent-btns"><button type="button" class="btn btn--ghost btn--sm" data-consent="denied">Refuser</button><button type="button" class="btn btn--sm" data-consent="granted">Accepter</button></div>
+</div>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>
