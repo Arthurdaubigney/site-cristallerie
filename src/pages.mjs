@@ -132,14 +132,6 @@ export const pages = {
       <figure class="piece" ${R(3)}>${photo(rel, 'presse-papier-baccarat')}<figcaption><strong>Presse-papiers</strong><span>Sulfures, fleurs et millefiori</span></figcaption></figure>
     </div>
     <p class="note-sample" style="color:var(--paper-dim)">Exemples de pièces de musées et de collections. Envoyez-nous vos photos pour estimer les vôtres.</p>
-
-    <h2 style="margin-top:clamp(64px,8vw,110px)" ${R()}>Ils nous ont confié leurs pièces</h2>
-    <!-- TÉMOIGNAGES D'EXEMPLE : à remplacer par de vrais avis clients avant la mise en ligne -->
-    <div class="quotes">
-      <blockquote class="quote" ${R(0)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Une réponse claire et rapide, avec le détail de chaque pièce du service. Très rassurant. »</p><footer><strong>Marie-Hélène</strong> · succession, service de verres</footer></blockquote>
-      <blockquote class="quote" ${R(1)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Ils se sont déplacés pour mes vases. Emballage soigné et règlement à la remise. »</p><footer><strong>Jean-Paul</strong> · collectionneur</footer></blockquote>
-      <blockquote class="quote" ${R(2)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Aucune pression, de vrais conseils pour identifier mes signatures. Je recommande. »</p><footer><strong>Sophie</strong> · particulier</footer></blockquote>
-    </div>
   </div>
 </section>
 
