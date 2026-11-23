@@ -34,8 +34,8 @@ const faqs = [
 export const pages = {
   // ----------------------------------------------------------------- ACCUEIL
   '': {
-    title: 'Rachat & estimation de cristallerie ancienne | Baccarat, Lalique, Daum',
-    description: "Estimation gratuite et rachat cash de cristallerie ancienne : vases en cristal, carafes, verres Baccarat, Saint-Louis, Lalique, Daum, Gallé. On vous répond rapidement, paiement à la remise.",
+    title: 'Rachat de cristallerie ancienne | Maison Cristallerie',
+    description: "Estimation gratuite et rachat de cristal ancien : Baccarat, Lalique, Daum, Gallé, Saint-Louis. Envoyez vos photos, on vous répond rapidement.",
     schema: [
       {
         '@context': 'https://schema.org',
@@ -132,14 +132,6 @@ export const pages = {
       <figure class="piece" ${R(3)}>${photo(rel, 'presse-papier-baccarat')}<figcaption><strong>Presse-papiers</strong><span>Sulfures, fleurs et millefiori</span></figcaption></figure>
     </div>
     <p class="note-sample" style="color:var(--paper-dim)">Exemples de pièces de musées et de collections. Envoyez-nous vos photos pour estimer les vôtres.</p>
-
-    <h2 style="margin-top:clamp(64px,8vw,110px)" ${R()}>Ils nous ont confié leurs pièces</h2>
-    <!-- TÉMOIGNAGES D'EXEMPLE : à remplacer par de vrais avis clients avant la mise en ligne -->
-    <div class="quotes">
-      <blockquote class="quote" ${R(0)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Une réponse claire et rapide, avec le détail de chaque pièce du service. Très rassurant. »</p><footer><strong>Marie-Hélène</strong> · succession, service de verres</footer></blockquote>
-      <blockquote class="quote" ${R(1)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Ils se sont déplacés pour mes vases. Emballage soigné et règlement à la remise. »</p><footer><strong>Jean-Paul</strong> · collectionneur</footer></blockquote>
-      <blockquote class="quote" ${R(2)}><div class="stars" aria-label="5 étoiles sur 5">${icon.star.repeat(5)}</div><p>« Aucune pression, de vrais conseils pour identifier mes signatures. Je recommande. »</p><footer><strong>Sophie</strong> · particulier</footer></blockquote>
-    </div>
   </div>
 </section>
 
@@ -165,8 +157,8 @@ export const pages = {
 
   // --------------------------------------------------------------- EXPERTISES
   expertises: {
-    title: 'Cristal ancien : manufactures, signatures et pièces recherchées',
-    description: "Guide d'expertise du cristal et de la verrerie d'art : Baccarat, Saint-Louis, Lalique, Daum, Gallé, Schneider, Val Saint-Lambert. Reconnaître une estampille ou une signature gravée.",
+    title: 'Manufactures de cristal et signatures | Maison Cristallerie',
+    description: "Baccarat, Saint-Louis, Lalique, Daum, Gallé, Schneider, Val Saint-Lambert : les pièces recherchées et comment reconnaître une signature gravée.",
     crumbs: [['Expertises', 'expertises']],
     body: (rel) => `
 <section class="page-hero"><div class="wrap has-photo"><div>
@@ -239,8 +231,8 @@ export const pages = {
 
   // --------------------------------------------------------------- ESTIMATION
   estimation: {
-    title: 'Estimation gratuite de cristallerie ancienne et rachat cash',
-    description: "Obtenez une estimation gratuite de vos cristaux, vases et verres anciens. Envoyez vos photos via le formulaire sécurisé : rachat au comptant, sans engagement.",
+    title: 'Estimation gratuite de cristal ancien | Maison Cristallerie',
+    description: "Estimation gratuite de vos cristaux, vases et verres anciens : envoyez vos photos via le formulaire, sans engagement. Rachat possible au comptant.",
     crumbs: [['Rachat & estimation', 'estimation']],
     schema: [
       {
@@ -320,8 +312,8 @@ export const pages = {
 
   // ---------------------------------------------------------------- À PROPOS
   'a-propos': {
-    title: "À propos : notre savoir-faire d'expert en cristal et verrerie ancienne",
-    description: "Passionnés d'arts de la table et de verrerie ancienne, nous estimons et rachetons cristal, vases et verres de collection avec transparence, rigueur et discrétion.",
+    title: "À propos | Maison Cristallerie, rachat de cristal ancien",
+    description: "Passionnés d'arts de la table et de verrerie ancienne, nous estimons et rachetons cristal et verres de collection, avec transparence et discrétion.",
     crumbs: [['À propos', 'a-propos']],
     body: (rel) => `
 <section class="page-hero"><div class="wrap has-photo"><div>
@@ -376,8 +368,8 @@ export const pages = {
 
   // ----------------------------------------------------------------- CONTACT
   contact: {
-    title: 'Contact & FAQ : estimation, authentification et rachat de cristal',
-    description: "Contactez-nous pour estimer votre cristallerie : coordonnées, zones de déplacement et réponses aux questions fréquentes sur l'authentification et le rachat de cristal ancien.",
+    title: 'Contact & FAQ cristal ancien | Maison Cristallerie',
+    description: "Zones de déplacement et réponses aux questions fréquentes sur l'estimation, l'authentification et le rachat de cristal ancien.",
     crumbs: [['Contact & FAQ', 'contact']],
     schema: [
       {
@@ -479,7 +471,7 @@ export const pages = {
   <p><strong>Vos droits :</strong> vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour les exercer, écrivez à <a href="mailto:${SITE.email}">${SITE.email}</a>. En cas de difficulté, vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr</a>).</p>
 
   <h2>Cookies et polices</h2>
-  <p>Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience. Les polices de caractères (Cormorant Garamond et Inter) sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google pour leur diffusion.</p>
+  <p>Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience. Les polices de caractères (Cormorant Garamond et Inter) sont hébergées sur le site lui-même : aucune requête n'est envoyée à un service tiers pour les afficher.</p>
 
   <h2>Responsabilité</h2>
   <p>Les estimations sont données à titre indicatif d'après les photographies fournies et ne constituent une offre ferme qu'après examen de la pièce. L'éditeur s'efforce d'assurer l'exactitude des informations du site mais ne peut garantir leur exhaustivité.</p>

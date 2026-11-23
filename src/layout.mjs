@@ -70,7 +70,7 @@ export function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
-export function render({ slug, title, description, body, schema = [], crumbs = [], ogImage = 'assets/img/carafe.svg', noindex = false }) {
+export function render({ slug, title, description, body, schema = [], crumbs = [], ogImage = 'assets/img/og-cristal.jpg', noindex = false }) {
   used.clear();
   current = slug || 'accueil';
   const rel = slug ? '../' : '';
@@ -112,6 +112,8 @@ export function render({ slug, title, description, body, schema = [], crumbs = [
 <meta name="theme-color" content="#0B0F17">
 <link rel="canonical" href="${canonical}">
 <link rel="icon" href="${rel}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${rel}assets/img/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="${rel}assets/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="${SITE.name}">
@@ -119,10 +121,12 @@ export function render({ slug, title, description, body, schema = [], crumbs = [
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${canonical}">
 <meta property="og:image" content="${SITE.url}/${ogImage}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
+<link rel="preload" href="${rel}assets/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${rel}assets/fonts/cormorant-garamond-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="${rel}assets/css/fonts.css">
 <link rel="stylesheet" href="${rel}assets/css/style.css">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
