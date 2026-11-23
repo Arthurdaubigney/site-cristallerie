@@ -1,4 +1,20 @@
 (() => {
+  // Consentement cookies (Google Consent Mode v2)
+  const box = document.getElementById('consent');
+  const granted = { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' };
+  const denied = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
+  const stored = () => { try { return localStorage.getItem('mc-consent'); } catch (_) { return null; } };
+  if (box) {
+    if (!stored()) box.hidden = false;
+    box.addEventListener('click', (e) => {
+      const v = e.target.closest('[data-consent]')?.dataset.consent;
+      if (!v) return;
+      try { localStorage.setItem('mc-consent', v); } catch (_) {}
+      if (window.gtag) window.gtag('consent', 'update', v === 'granted' ? granted : denied);
+      box.hidden = true;
+    });
+    document.querySelectorAll('[data-consent-open]').forEach((b) => b.addEventListener('click', () => { box.hidden = false; }));
+  }
   const root = document.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
