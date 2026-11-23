@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maison-cristallerie.fr/sitemap.xml
+Sitemap: https://www.maison-cristallerie.fr/sitemap.xml
