@@ -470,9 +470,8 @@ export const pages = {
   <p><strong>Sous-traitants :</strong> le formulaire est fourni par <a href="https://tally.so" rel="noopener" target="_blank">Tally</a>, qui héberge les réponses pour le compte de l'éditeur. Le site est hébergé par Vercel (voir ci-dessus). Certains prestataires peuvent être situés hors de l'Union européenne ; les transferts sont alors encadrés par les mécanismes prévus par le RGPD.</p>
   <p><strong>Vos droits :</strong> vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour les exercer, écrivez à <a href="mailto:${SITE.email}">${SITE.email}</a>. En cas de difficulté, vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr</a>).</p>
 
-  <h2 id="cookies">Cookies et polices</h2>
-  <p>Ce site utilise, <strong>uniquement avec votre accord</strong>, la balise Google Ads (identifiant AW-18503417665) pour mesurer l'efficacité de nos annonces publicitaires : elle dépose un cookie et transmet des données de navigation à Google, dont les serveurs peuvent être situés hors de l'Union européenne. Tant que vous n'avez pas accepté, aucun cookie n'est déposé. Vous pouvez refuser ou modifier votre choix à tout moment via le lien « Cookies » en bas de chaque page.</p>
-  <p>Les polices de caractères (Cormorant Garamond et Inter) sont hébergées sur le site lui-même : aucune requête n'est envoyée à un service tiers pour les afficher.</p>
+  <h2>Cookies et polices</h2>
+  <p>Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience. Les polices de caractères (Cormorant Garamond et Inter) sont hébergées sur le site lui-même : aucune requête n'est envoyée à un service tiers pour les afficher.</p>
 
   <h2>Responsabilité</h2>
   <p>Les estimations sont données à titre indicatif d'après les photographies fournies et ne constituent une offre ferme qu'après examen de la pièce. L'éditeur s'efforce d'assurer l'exactitude des informations du site mais ne peut garantir leur exhaustivité.</p>

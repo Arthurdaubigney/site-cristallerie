@@ -6,7 +6,6 @@ export const SITE = {
   tagline: 'Expertise & rachat de cristallerie',
   url: 'https://www.maison-cristallerie.fr',
   email: 'francoisseculapub@gmail.com',
-  gtagId: 'AW-18503417665', // Google Ads
   zone: 'Paris, Île-de-France et toute la France',
   tallyId: '7XqAM0', // formulaire Tally : https://tally.so/r/7XqAM0
 };
@@ -131,15 +130,6 @@ export function render({ slug, title, description, body, schema = [], crumbs = [
 <link rel="stylesheet" href="${rel}assets/css/style.css">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">${JSON.stringify(ld)}</script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
-try { if (localStorage.getItem('mc-consent') === 'granted') gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' }); } catch (e) {}
-gtag('js', new Date());
-gtag('config', '${SITE.gtagId}');
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=${SITE.gtagId}"></script>
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -165,13 +155,9 @@ ${content}
       <div><h2>Contact</h2><ul><li><a href="${rel}estimation/">Formulaire d'estimation</a></li><li>${SITE.zone}</li></ul></div>
     </div>
     ${creditsHtml()}
-    <div class="foot-bottom"><span>© <span id="y">2026</span> ${SITE.name}. Tous droits réservés.</span><span>Estimation gratuite · Sans engagement · <a href="${rel}mentions-legales/">Mentions légales</a> · <button type="button" class="linklike" data-consent-open>Cookies</button></span></div>
+    <div class="foot-bottom"><span>© <span id="y">2026</span> ${SITE.name}. Tous droits réservés.</span><span>Estimation gratuite · Sans engagement · <a href="${rel}mentions-legales/">Mentions légales</a></span></div>
   </div>
 </footer>
-<div class="consent" id="consent" role="dialog" aria-live="polite" aria-label="Cookies" hidden>
-  <p>Nous utilisons un cookie de mesure publicitaire (Google Ads) pour évaluer l'efficacité de nos annonces. Vous pouvez l'accepter ou le refuser, sans conséquence sur votre navigation. <a href="${rel}mentions-legales/#cookies">En savoir plus</a></p>
-  <div class="consent-btns"><button type="button" class="btn btn--ghost btn--sm" data-consent="denied">Refuser</button><button type="button" class="btn btn--sm" data-consent="granted">Accepter</button></div>
-</div>
 <script src="${rel}assets/js/main.js" defer></script>
 </body>
 </html>
